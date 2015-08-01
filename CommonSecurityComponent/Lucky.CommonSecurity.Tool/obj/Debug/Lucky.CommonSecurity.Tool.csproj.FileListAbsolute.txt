@@ -1,0 +1,5 @@
+D:\001code\CommonSecurityComponent\CommonSecurityComponent\Lucky.CommonSecurity.Tool\bin\Debug\Lucky.CommonSecurity.Tool.dll
+D:\001code\CommonSecurityComponent\CommonSecurityComponent\Lucky.CommonSecurity.Tool\bin\Debug\Lucky.CommonSecurity.Tool.pdb
+D:\001code\CommonSecurityComponent\CommonSecurityComponent\Lucky.CommonSecurity.Tool\obj\Debug\ResolveAssemblyReference.cache
+D:\001code\CommonSecurityComponent\CommonSecurityComponent\Lucky.CommonSecurity.Tool\obj\Debug\Lucky.CommonSecurity.Tool.dll
+D:\001code\CommonSecurityComponent\CommonSecurityComponent\Lucky.CommonSecurity.Tool\obj\Debug\Lucky.CommonSecurity.Tool.pdb
