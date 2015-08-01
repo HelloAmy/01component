@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="520c1d59-df7f-4cb7-a94c-1561312005c5" name="zhujinrong@517-02-01-633 2015-04-27 19:33:38" runUser="517NA\zhujinrong" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="本地测试运行" id="48812e57-6796-4d7e-8c8b-4a24049a226f">
+    <Description>这是本地测试运行的默认测试运行配置。</Description>
+    <Deployment runDeploymentRoot="D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestResults\zhujinrong_517-02-01-633 2015-04-27 19_33_38">
+      <DeploymentItem filename="D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\Lucky.PrimaryKeyGenerator.Component\bin\Debug\Lucky.PrimaryKeyGenerator.Component.dll" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2015-04-27T19:33:38.7059903+08:00" queuing="2015-04-27T19:33:40.9351178+08:00" start="2015-04-27T19:33:41.0301233+08:00" finish="2015-04-27T19:33:44.6973330+08:00" />
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="d:\002basecode\01csharp\commonprimarykeygeneratorcomponent\testproject1\bin\debug\testproject1.dll" id="59863143-3238-122e-4d8a-637b491cc755">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="5b5d27bc-f3ae-47ca-b047-4b8ce6b24a70" />
+      <TestMethod codeBase="D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="59863143-3238-122e-4d8a-637b491cc755" executionId="5b5d27bc-f3ae-47ca-b047-4b8ce6b24a70" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="5b5d27bc-f3ae-47ca-b047-4b8ce6b24a70" testId="59863143-3238-122e-4d8a-637b491cc755" testName="TestMethod1" computerName="517-02-01-633" duration="00:00:03.2335947" startTime="2015-04-27T19:33:41.1111279+08:00" endTime="2015-04-27T19:33:44.6533305+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <ErrorInfo>
+          <Message>测试方法 TestProject1.UnitTest1.TestMethod1 引发异常:  System.TypeInitializationException: “Lucky.PrimaryKeyGenerator.Component.UniqueCodeMap”的类型初始值设定项引发异常。 ---&gt;  System.NullReferenceException: 未将对象引用设置到对象的实例。。</Message>
+          <StackTrace>    在 Lucky.PrimaryKeyGenerator.Component.UniqueCodeMap..cctor() 位置 D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\Lucky.PrimaryKeyGenerator.Component\UniqueCodeMap.cs:行号 46
+ --- 内部异常堆栈跟踪的末尾 ---
+    在 Lucky.PrimaryKeyGenerator.Component.UniqueCodeMap.GetUniqueCode(String databaseName, String tableName)
+   在 Lucky.PrimaryKeyGenerator.Component.PrimaryKeyFactory.NewPrimaryKey(String databaseName, String tableName) 位置 D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\Lucky.PrimaryKeyGenerator.Component\PrimaryKeyFactory.cs:行号 39
+   在 TestProject1.UnitTest1.TestMethod1() 位置 D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestProject1\UnitTest1.cs:行号 70
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

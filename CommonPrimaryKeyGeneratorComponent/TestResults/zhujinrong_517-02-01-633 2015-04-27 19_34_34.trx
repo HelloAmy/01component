@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ed519dff-2c0c-49d2-b6b4-b265af2ab054" name="zhujinrong@517-02-01-633 2015-04-27 19:34:34" runUser="517NA\zhujinrong" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="本地测试运行" id="48812e57-6796-4d7e-8c8b-4a24049a226f">
+    <Description>这是本地测试运行的默认测试运行配置。</Description>
+    <Deployment runDeploymentRoot="D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestResults\zhujinrong_517-02-01-633 2015-04-27 19_34_34">
+      <DeploymentItem filename="D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\Lucky.PrimaryKeyGenerator.Component\bin\Debug\Lucky.PrimaryKeyGenerator.Component.dll" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2015-04-27T19:34:34.6211885+08:00" queuing="2015-04-27T19:34:36.9913241+08:00" start="2015-04-27T19:34:37.0913298+08:00" finish="2015-04-27T19:35:10.0432145+08:00" />
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="d:\002basecode\01csharp\commonprimarykeygeneratorcomponent\testproject1\bin\debug\testproject1.dll" id="59863143-3238-122e-4d8a-637b491cc755">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="7d5edf30-121b-4bf9-a106-03e443516567" />
+      <TestMethod codeBase="D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestProject1\bin\Debug\TestProject1.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject1.UnitTest1, TestProject1" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="列表中未列出的结果" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="所有已加载的结果" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="59863143-3238-122e-4d8a-637b491cc755" executionId="7d5edf30-121b-4bf9-a106-03e443516567" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="7d5edf30-121b-4bf9-a106-03e443516567" testId="59863143-3238-122e-4d8a-637b491cc755" testName="TestMethod1" computerName="517-02-01-633" duration="00:00:32.4967340" startTime="2015-04-27T19:34:37.1823350+08:00" endTime="2015-04-27T19:35:10.0062124+08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <StdOut>201504271934422087049un00</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

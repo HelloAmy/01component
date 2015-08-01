@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Lucky.PrimaryKeyGenerator.Component
+{
+    /// <summary>
+    /// 数据库名
+    /// </summary>
+    public class DataBaseName
+    {
+        /// <summary>
+        /// 未知数据库名
+        /// </summary>
+        public const string UnKnownDataBase = "UnKnownDataBase";
+    }
+}

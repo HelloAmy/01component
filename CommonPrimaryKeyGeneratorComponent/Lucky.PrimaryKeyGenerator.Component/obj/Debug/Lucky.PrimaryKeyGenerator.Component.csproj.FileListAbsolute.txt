@@ -1,0 +1,5 @@
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\Lucky.PrimaryKeyGenerator.Component\obj\Debug\ResolveAssemblyReference.cache
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\Lucky.PrimaryKeyGenerator.Component\bin\Debug\Lucky.PrimaryKeyGenerator.Component.dll
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\Lucky.PrimaryKeyGenerator.Component\bin\Debug\Lucky.PrimaryKeyGenerator.Component.pdb
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\Lucky.PrimaryKeyGenerator.Component\obj\Debug\Lucky.PrimaryKeyGenerator.Component.dll
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\Lucky.PrimaryKeyGenerator.Component\obj\Debug\Lucky.PrimaryKeyGenerator.Component.pdb

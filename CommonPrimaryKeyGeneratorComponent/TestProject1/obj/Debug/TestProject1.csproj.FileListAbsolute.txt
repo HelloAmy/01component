@@ -1,0 +1,7 @@
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestProject1\bin\Debug\TestProject1.dll
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestProject1\bin\Debug\TestProject1.pdb
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestProject1\bin\Debug\Lucky.PrimaryKeyGenerator.Component.dll
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestProject1\bin\Debug\Lucky.PrimaryKeyGenerator.Component.pdb
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestProject1\obj\Debug\ResolveAssemblyReference.cache
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestProject1\obj\Debug\TestProject1.dll
+D:\002baseCode\01CSharp\CommonPrimaryKeyGeneratorComponent\TestProject1\obj\Debug\TestProject1.pdb
