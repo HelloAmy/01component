@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Julius.LoggerComponent", "Common.Julius.LoggerComponent\Common.Julius.LoggerComponent.csproj", "{887DF6E1-CDC8-43EE-9B03-E90DF0B627FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exeTest", "exeTest\exeTest.csproj", "{FCFBD130-3A7A-4162-903D-E2AE82EE36AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EXETest", "exeTest\EXETest.csproj", "{FCFBD130-3A7A-4162-903D-E2AE82EE36AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

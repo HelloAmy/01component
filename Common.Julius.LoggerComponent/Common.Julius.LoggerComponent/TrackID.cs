@@ -74,11 +74,11 @@ namespace Common.Julius.LoggerComponent
 
             string timeStr = DateTime.Now.ToString("yyMMddHHmmssfff");
 
-            string randomCodeStr = new Random().Next(0, 9999).ToString();
+            string randomCodeStr = new Random().Next(0, 99999).ToString();
 
-            if (randomCodeStr.Length < 4)
+            if (randomCodeStr.Length < 5)
             {
-                randomCodeStr = randomCodeStr.PadLeft(4, '0');
+                randomCodeStr = randomCodeStr.PadLeft(5, '0');
             }
 
             this.trackId = ret + timeStr + randomCodeStr;

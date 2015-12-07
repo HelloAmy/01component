@@ -31,7 +31,7 @@ namespace EXETest
             TrackIDManager.GetInstance("zhujinrong");
 
             // 控制台程序报错
-            Console.WriteLine("current TrackId：" + TrackIDManager.CurrentTrackID.TrackIdStr);
+            Console.WriteLine("current TrackId：" + TrackIDManager.CurrentTrackID.TrackIdStr  + TrackIDManager.CurrentTrackID.TrackIdStr.Length);
 
             TrackIDManager.GetInstance("zhujinrong");
 
