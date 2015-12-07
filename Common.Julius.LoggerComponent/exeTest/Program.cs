@@ -1,14 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿// ***********************************************************************
+// Assembly         : EXETest
+// Author           : zhujinrong
+// Created          : 12-04-2015
+//
+// Last Modified By : zhujinrong
+// Last Modified On : 12-07-2015
+// ***********************************************************************
+// <copyright file="Program.cs" company="Microsoft">
+//     Copyright (c) Microsoft. All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
+
+using System;
 using Common.Julius.LoggerComponent;
 
-namespace exeTest
+namespace EXETest
 {
-    class Program
+    /// <summary>
+    /// Class Program
+    /// </summary>
+    internal class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The args.</param>
+        internal static void Main(string[] args)
         {
             TrackIDManager.GetInstance("zhujinrong");
 

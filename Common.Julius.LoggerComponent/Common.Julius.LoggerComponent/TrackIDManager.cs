@@ -12,12 +12,8 @@
 // <summary></summary>
 // ***********************************************************************
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web;
 using System.Runtime.Remoting.Messaging;
+using System.Web;
 
 namespace Common.Julius.LoggerComponent
 {

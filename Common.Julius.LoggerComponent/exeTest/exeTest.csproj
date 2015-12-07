@@ -8,8 +8,8 @@
     <ProjectGuid>{FCFBD130-3A7A-4162-903D-E2AE82EE36AE}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>exeTest</RootNamespace>
-    <AssemblyName>exeTest</AssemblyName>
+    <RootNamespace>EXETest</RootNamespace>
+    <AssemblyName>EXETest</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
