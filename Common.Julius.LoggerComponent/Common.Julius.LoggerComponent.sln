@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Julius.LoggerComponent", "Common.Julius.LoggerComponent\Common.Julius.LoggerComponent.csproj", "{887DF6E1-CDC8-43EE-9B03-E90DF0B627FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exeTest", "exeTest\exeTest.csproj", "{FCFBD130-3A7A-4162-903D-E2AE82EE36AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{887DF6E1-CDC8-43EE-9B03-E90DF0B627FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887DF6E1-CDC8-43EE-9B03-E90DF0B627FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887DF6E1-CDC8-43EE-9B03-E90DF0B627FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887DF6E1-CDC8-43EE-9B03-E90DF0B627FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCFBD130-3A7A-4162-903D-E2AE82EE36AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFBD130-3A7A-4162-903D-E2AE82EE36AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFBD130-3A7A-4162-903D-E2AE82EE36AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFBD130-3A7A-4162-903D-E2AE82EE36AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
