@@ -52,6 +52,16 @@ namespace Common.Julius.LoggerComponent
         }
 
         /// <summary>
+        /// Gets or sets the exception ID.
+        /// </summary>
+        /// <value>The exception ID.</value>
+        public string ExceptionID
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// 初始化
         /// </summary>
         private void Init()
