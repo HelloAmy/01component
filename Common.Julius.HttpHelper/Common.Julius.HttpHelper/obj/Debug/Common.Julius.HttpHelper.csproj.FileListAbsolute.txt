@@ -1,0 +1,8 @@
+E:\2016code\draft\Common.Julius.HttpHelper\Common.Julius.HttpHelper\obj\Debug\Common.Julius.HttpHelper.csprojResolveAssemblyReference.cache
+E:\2016code\draft\Common.Julius.HttpHelper\Common.Julius.HttpHelper\bin\Debug\Common.Julius.HttpHelper.dll
+E:\2016code\draft\Common.Julius.HttpHelper\Common.Julius.HttpHelper\bin\Debug\Common.Julius.HttpHelper.pdb
+E:\2016code\draft\Common.Julius.HttpHelper\Common.Julius.HttpHelper\bin\Debug\Common.Julius.LoggerComponent.dll
+E:\2016code\draft\Common.Julius.HttpHelper\Common.Julius.HttpHelper\bin\Debug\MySql.Data.dll
+E:\2016code\draft\Common.Julius.HttpHelper\Common.Julius.HttpHelper\bin\Debug\Common.Julius.LoggerComponent.pdb
+E:\2016code\draft\Common.Julius.HttpHelper\Common.Julius.HttpHelper\obj\Debug\Common.Julius.HttpHelper.dll
+E:\2016code\draft\Common.Julius.HttpHelper\Common.Julius.HttpHelper\obj\Debug\Common.Julius.HttpHelper.pdb

@@ -70,7 +70,7 @@
     <Compile Include="02Factory\ConnectionFactory.cs" />
     <Compile Include="02Factory\DALFactory.cs" />
     <Compile Include="06Helper\FileHelper.cs" />
-    <Compile Include="05IDAL\IAppException.cs" />
+    <Compile Include="05IDAL\IMAppException.cs" />
     <Compile Include="01Log\FileLoging.cs" />
     <Compile Include="01Log\ILoging.cs" />
     <Compile Include="01Log\Logging.cs" />
@@ -78,6 +78,7 @@
     <Compile Include="07Model\MAppException.cs" />
     <Compile Include="07Model\ExceptionLevel.cs" />
     <Compile Include="03MySQLDAL\DMAppException.cs" />
+    <Compile Include="07Model\MInteractionParam.cs" />
     <Compile Include="08TextAccess\TextDataAccess.cs" />
     <Compile Include="09VModel\GlobalLog.cs" />
     <Compile Include="09VModel\LogType.cs" />
