@@ -1,0 +1,5 @@
+D:\021draft\HelpWeb\Help.Common.Base\bin\Debug\Help.Common.Base.dll
+D:\021draft\HelpWeb\Help.Common.Base\bin\Debug\Help.Common.Base.pdb
+D:\021draft\HelpWeb\Help.Common.Base\obj\Debug\Help.Common.Base.dll
+D:\021draft\HelpWeb\Help.Common.Base\obj\Debug\Help.Common.Base.pdb
+D:\021draft\HelpWeb\Help.Common.Base\obj\Debug\Help.Common.Base.csprojResolveAssemblyReference.cache

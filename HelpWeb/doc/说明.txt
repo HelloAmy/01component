@@ -1,0 +1,4 @@
+﻿1 表的数据模拟，是本目录下的：ServiceRoute.sql
+2 分页服务：D:\002baseCode\01CSharp\ExplorePagerService，启动的时候修改web.config的配置文件，有一个分页服务的节点。
+3 关于本网站使用的分页控制，参考MvcPager,开源代码 
+4 关于资源网站：D:\001code\01前端\01Resource，必须搭建IIS，并且域名映射为：resource.common.com

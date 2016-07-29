@@ -1,0 +1,240 @@
+﻿@model Help.Common.ViewModel.PagedList<Help.DataService.VModel.AmyDB.VMUserInfo>
+@{
+    ViewBag.Title = "用户信息管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section headSection{
+    <link href="http://resource.common.com/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://resource.common.com/layer-v2.2/layer/skin/layer.css" rel="stylesheet" />
+    <!-- jstree的样式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+    <style type="text/css">
+        .page-num {
+            width: 98%;
+            /* [disabled]padding: 0px 0px 5px 0px; */
+            margin: 0px auto 5px auto;
+            /* [disabled]line-height: 24px; */
+            /* [disabled]border-bottom:#ccc 1px solid; */
+            text-align: right;
+            position: relative;
+        }
+    </style>
+}
+
+@section scripts{
+    <script src="http://resource.common.com/jquery/jquery-1.12.0.js"></script>
+    <script src="http://resource.common.com/sea.js"></script>
+    @*<script src="http://resource.common.com/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>*@
+    <script type="text/javascript">
+        seajs.config({
+
+            // 解析顶级域名
+            base: "http://resource.common.com/",
+
+            // 别名
+            alias:
+            {
+                "jsRender": "http://resource.common.com/jquery.jsRender.min.js",
+                "underscore": "http://resource.common.com/underscore.js",
+                "bootstrap": "http://resource.common.com/bootstrap-3.3.5-dist/js/bootstrap.min.js",
+                "layer": "http://resource.common.com/layer-v2.2/layer/layer.js",
+                "jqueryPlugin": "http://resource.common.com/jquery/jquery.plugin.js",
+                "JSTree": "https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js",
+                "UserInfoManage": "~/Scripts/RoleInfo/UserInfoManage.js",
+            },
+
+            // 预加载
+            preload: ["underscore", "bootstrap", "layer", "jsRender", "jqueryPlugin", "JSTree", "UserInfoManage"],
+        });
+
+        // 页面加载模块
+        seajs.use(["underscore", "bootstrap", "layer", "jsRender", "jqueryPlugin", "JSTree", "UserInfoManage"]);
+
+    </script>
+}
+
+<span style="margin-left: 2em;">管理>>用户管理</span>
+
+<div id="query" style="margin-top: 30px; margin-left: 20px;">
+    @using (@Html.BeginForm("UserInfoManage", "UserInfo", FormMethod.Get, new { @class = "form-horizontal" }))
+    {
+        <div class="form-group">
+            <label for="LoginName" class="col-sm-1 control-label" style="text-align: right;">登陆名</label>
+            <div class="col-sm-2">
+                @Html.TextBox("LoginName", this.ViewData["LoginName"], new { @class = "form-control" })
+            </div>
+
+            <label for="Telephone" class="col-sm-1 control-label" style="text-align: right;">电话号码：</label>
+            <div class="col-sm-2" style="text-align: right;">
+                @Html.TextBox("Telephone", this.ViewData["Telephone"], new { @class = "form-control" })
+            </div>
+
+            <label for="Email" class="col-sm-1 control-label" style="text-align: right;">邮&nbsp;&nbsp;箱：</label>
+            <div class="col-sm-2" style="text-align: right;">
+                @Html.TextBox("Email", this.ViewData["Email"], new { @class = "form-control" })
+            </div>
+
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-default" id="Query">查&nbsp;&nbsp;询</button>
+
+                <!-- 按钮触发模态框 -->
+                <button class="btn btn-primary" data-toggle="modal" type="button" id="addbtn"
+                    data-target="#addModal">
+                    添&nbsp;&nbsp;加
+                </button>
+            </div>
+        </div>
+    }
+</div>
+
+<div id="result">
+    <table class="table table-hover">
+        <caption></caption>
+        <thead>
+            <tr>
+                <th>登陆名</th>
+                <th>用户名</th>
+                <th>电话号码</th>
+                <th>电子邮箱</th>
+                <th>添加时间</th>
+                <th>修改时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                for (int i = 0; i < Model.Count; i++)
+                {
+                <tr>
+                    <td>@Model[i].LoginName</td>
+                    <td>@Model[i].UserName</td>
+                    <td>@Model[i].Telephone</td>
+                    <td>@Model[i].Email</td>
+                    <td>@Model[i].ModifyTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                    <td>@Model[i].AddTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-xs updateButton" KeyID="@Model[i].KeyID" data-toggle="modal"
+                    data-target="#addModal">
+                            修改
+                        </button>
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    @if (@Model != null && @Model.Count > 0)
+    {
+        <div class="page-num">
+            @Html.Pager(Model, new Help.Common.ViewModel.PagerOptions
+            {
+                AutoHide = false,
+                PageIndexParameterName = "pageIndex",
+                ShowNumericPagerItems = false,
+                ShowPageIndexBox = true,
+                ShowFirstLast = true,
+                ShowGoButton = true,
+                GoToPageSectionWrapperFormatString = "转到：{0}",
+                PageHeadSectionAttachFormatString = string.Format("每页{0}条&nbsp;&nbsp;共{1}条", Model.PageSize, Model.TotalItemCount),
+                PagerTailSectionAttachFormatString = Model.CurrentPageIndex + " /" + Model.TotalPageCount,
+                GoButtonText = "确定"
+            })
+        </div>
+    }
+</div>
+
+<!-- 添加模板框 -->
+<script type="text/x-jsrender" id="addModalTemplate">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"
+                    data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="addModalLabel">{{if KeyID === ''}}
+                        添加用户信息
+                        {{else}}
+                        修改用户信息
+                        {{/if}}
+                </h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" id="addModalform">
+                    <div class="form-group">
+                        <input type="hidden" name="KeyID" value="{{:KeyID}}" />
+                        <label for="LoginName" class="col-sm-3 control-label" style="text-align: right;">登陆名</label>
+
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="LoginName" value="{{:LoginName}}" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Password" class="col-sm-3 control-label" style="text-align: right;">密码</label>
+
+                        <div class="col-sm-6">
+                            <input type="password" class="form-control" name="Password" value="{{:Password}}" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="UserName" class="col-sm-3 control-label" style="text-align: right;">用户名</label>
+
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="UserName" value="{{:UserName}}" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Telephone" class="col-sm-3 control-label" style="text-align: right;">电话号码</label>
+
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="Telephone" value="{{:Telephone}}" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Email" class="col-sm-3 control-label" style="text-align: right;">邮箱</label>
+
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" name="Email" value="{{:Email}}" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="RoleInfoArray" class="col-sm-3 control-label" style="text-align: right;">邮箱</label>
+
+                        <div class="col-sm-6">
+                            {{if RoleInfoArray != null && RoleInfoArray.length > 0}}
+                            {{for}}
+                                <input type="checkbox" name="RoleInfoArray" value="" /><span>名字</span>
+                            {{/for}}
+                            {{/if}}
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                    data-dismiss="modal">
+                    关闭
+                </button>
+                <button type="button" class="btn btn-primary" id="addModalBtn">
+                    保存
+                </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+</script>
+
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+</div>

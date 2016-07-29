@@ -1,0 +1,13 @@
+<GhostDoc>
+  <SpellChecker>
+    <IncludeExtensions>
+    </IncludeExtensions>
+    <IgnoreExtensions>
+      <IgnoreExtension>.cs</IgnoreExtension>
+      <IgnoreExtension>.js</IgnoreExtension>
+    </IgnoreExtensions>
+    <IgnoreFiles>
+    </IgnoreFiles>
+  </SpellChecker>
+  </HelpFile>
+</GhostDoc>

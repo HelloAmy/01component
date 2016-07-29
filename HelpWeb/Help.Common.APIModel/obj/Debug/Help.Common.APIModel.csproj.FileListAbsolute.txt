@@ -1,0 +1,4 @@
+D:\021draft\HelpWeb\Help.Common.APIModel\bin\Debug\Help.Common.APIModel.dll
+D:\021draft\HelpWeb\Help.Common.APIModel\bin\Debug\Help.Common.APIModel.pdb
+D:\021draft\HelpWeb\Help.Common.APIModel\obj\Debug\Help.Common.APIModel.dll
+D:\021draft\HelpWeb\Help.Common.APIModel\obj\Debug\Help.Common.APIModel.pdb

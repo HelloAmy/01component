@@ -1,0 +1,5 @@
+D:\021draft\HelpWeb\Help.Common.IDAL\bin\Debug\Help.Common.IDAL.dll
+D:\021draft\HelpWeb\Help.Common.IDAL\bin\Debug\Help.Common.IDAL.pdb
+D:\021draft\HelpWeb\Help.Common.IDAL\obj\Debug\Help.Common.IDAL.dll
+D:\021draft\HelpWeb\Help.Common.IDAL\obj\Debug\Help.Common.IDAL.pdb
+D:\021draft\HelpWeb\Help.Common.IDAL\obj\Debug\Help.Common.IDAL.csprojResolveAssemblyReference.cache

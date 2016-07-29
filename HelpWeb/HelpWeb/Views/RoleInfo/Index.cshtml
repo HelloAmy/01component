@@ -1,0 +1,263 @@
+﻿@using Help.Common.ViewModel
+@model Help.Common.ViewModel.PagedList<Help.DataService.VModel.AmyDB.VMRoleInfo>
+
+
+@{
+    ViewBag.Title = "角色管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headSection{
+    <link href="http://resource.common.com/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://resource.common.com/layer-v2.2/layer/skin/layer.css" rel="stylesheet" />
+
+    <style type="text/css">
+        .page-num {
+            width: 98%;
+            /* [disabled]padding: 0px 0px 5px 0px; */
+            margin: 0px auto 5px auto;
+            /* [disabled]line-height: 24px; */
+            /* [disabled]border-bottom:#ccc 1px solid; */
+            text-align: right;
+            position: relative;
+        }
+    </style>
+
+}
+
+@section scripts{
+    <script src="http://resource.common.com/jquery/jquery-1.12.0.js"></script>
+    <script src="http://resource.common.com/sea.js"></script>
+    @*<script src="http://resource.common.com/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>*@
+    <script type="text/javascript">
+        seajs.config({
+
+            // 解析顶级域名
+            base: "http://resource.common.com/",
+
+            // 别名
+            alias:
+            {
+                "jsRender": "http://resource.common.com/jquery.jsRender.min.js",
+                "underscore": "http://resource.common.com/underscore.js",
+                "bootstrap": "http://resource.common.com/bootstrap-3.3.5-dist/js/bootstrap.min.js",
+                "layer": "http://resource.common.com/layer-v2.2/layer/layer.js",
+                "jqueryPlugin": "http://resource.common.com/jquery/jquery.plugin.js",
+                "Index": "http://resource.common.com/HelpWeb/RoleInfo/Index.js",
+            },
+
+            // 预加载
+            preload: ["underscore", "bootstrap", "layer", "jsRender", "jqueryPlugin", "Index"],
+        });
+
+        // 页面加载模块
+        seajs.use(["underscore", "bootstrap", "layer", "jsRender", "jqueryPlugin", "Index"]);
+
+    </script>
+}
+
+<span style="margin-left: 2em;">管理>>角色管理</span>
+
+<div id="query" style="margin-top: 30px; margin-left: 20px;">
+    @using (@Html.BeginForm("Index", "RoleInfo", FormMethod.Get, new { @class = "form-horizontal" }))
+    {
+        <div class="form-group">
+            <label for="RoleName" class="col-sm-1 control-label" style="text-align: right;">用户名</label>
+            <div class="col-sm-3">
+                @Html.TextBox("RoleName", this.ViewData["RoleName"], new { @class = "form-control" })
+            </div>
+
+            <label for="IsValid" class="col-sm-1 control-label" style="text-align: right;">是否生效</label>
+            <div class="col-sm-1" style="text-align: right;">
+                <select class="form-control" name="IsValid">
+                    @if (this.ViewData["IsValid"] == null)
+                    {
+                        <option value="" selected>全部</option>
+                    }
+                    else
+                    {
+                        <option value="">全部</option>
+                    }
+
+                    @if (this.ViewData["IsValid"] != null && this.ViewData["IsValid"].ToString() == "1")
+                    {
+                        <option value="1" selected>是</option>
+                    }
+                    else
+                    {
+                        <option value="1">是</option>
+                    }
+
+                    @if (this.ViewData["IsValid"] != null && this.ViewData["IsValid"].ToString() == "0")
+                    {
+                        <option value="0" selected>否</option>
+                    }
+                    else
+                    {
+                        <option value="0">否</option>
+                    }
+                </select>
+            </div>
+
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-default" id="Query">查&nbsp;&nbsp;询</button>
+
+                <!-- 按钮触发模态框 -->
+                <button class="btn btn-primary" data-toggle="modal" type="button" id="addbtn"
+                    data-target="#addModal">
+                    添&nbsp;&nbsp;加
+                </button>
+            </div>
+        </div>
+    }
+</div>
+
+<div id="result" width="80%" style="margin-left: 20px;">
+    <table class="table table-hover">
+        <caption></caption>
+        <thead>
+            <tr>
+                <th>角色名</th>
+                <th>别名</th>
+                <th>修改时间</th>
+                <th>添加时间</th>
+                <th>是否启用</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                for (int i = 0; i < Model.Count; i++)
+                {
+                <tr>
+                    <td>@Model[i].RoleName</td>
+                    <td>@Model[i].RoleAlias</td>
+                    <td>@Model[i].ModifyTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                    <td>@Model[i].AddTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                    <td>@if (Model[i].IsValid == 1)
+                        {
+                        <span>是</span>
+                        }
+                        else
+                        {
+                        <span>否</span>
+                        }
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-xs updateButton" KeyID="@Model[i].KeyID" data-toggle="modal"
+                    data-target="#addModal">
+                            修改
+                        </button>
+
+                        <button type="button" class="btn btn-default btn-xs validOperateButton" KeyID="@Model[i].KeyID" IsValid="@Model[i].IsValid" ContractName="@Model[i].RoleName" data-toggle="modal"  data-target="#DialogModal">
+                            @if (Model[i].IsValid == 1)
+                            {
+                                <span>禁用</span>
+                            }
+                            else
+                            {
+                                <span>启用</span>
+                            }
+                        </button>
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    @if (@Model != null && @Model.Count > 0)
+    {
+        <div class="page-num">
+            @Html.Pager(Model, new Help.Common.ViewModel.PagerOptions
+            {
+                AutoHide = false,
+                PageIndexParameterName = "pageIndex",
+                ShowNumericPagerItems = false,
+                ShowPageIndexBox = true,
+                ShowFirstLast = true,
+                ShowGoButton = true,
+                GoToPageSectionWrapperFormatString = "转到：{0}",
+                PageHeadSectionAttachFormatString = string.Format("每页{0}条&nbsp;&nbsp;共{1}条", Model.PageSize, Model.TotalItemCount),
+                PagerTailSectionAttachFormatString = Model.CurrentPageIndex + " /" + Model.TotalPageCount,
+                GoButtonText = "确定"
+            })
+        </div>
+    }
+
+    <!-- 添加模板框 -->
+    <script type="text/x-jsrender" id="addModalTemplate">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="addModalLabel">{{if KeyID === ''}}
+                        添加角色信息
+                        {{else}}
+                        修改角色
+                        {{/if}}
+                    </h4>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal" id="addModalform">
+                        <div class="form-group">
+                            <input type="hidden" name="KeyID" value="{{:KeyID}}" />
+                            <label for="RoleName" class="col-sm-3 control-label" style="text-align: right;">角色名</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="RoleName" value="{{:RoleName}}" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="RoleAlias" class="col-sm-3 control-label" style="text-align: right;">别名</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="RoleAlias" value="{{:RoleAlias}}" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="IsValid" class="col-sm-3 control-label" style="text-align: right;">是否启用</label>
+
+                            <div class="col-sm-6">
+                                {{if IsValid == 1}}
+                                <input type="radio" name="IsValid" value="1" title="启用" checked />
+                                启用 &nbsp;&nbsp;
+                                <input type="radio" name="IsValid" value="0" title="禁用" />
+                                禁用
+                                {{else}}
+                                 <input type="radio" name="IsValid" value="1" title="启用" />
+                                启用 &nbsp;&nbsp;
+                                <input type="radio" name="IsValid" value="0" title="禁用" checked />
+                                禁用
+                                {{/if}}
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"
+                        data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button type="button" class="btn btn-primary" id="addModalBtn">
+                        保存
+                    </button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </script>
+
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
+
+</div>
