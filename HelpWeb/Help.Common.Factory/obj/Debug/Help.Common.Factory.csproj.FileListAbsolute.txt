@@ -3,3 +3,8 @@ D:\021draft\HelpWeb\Help.Common.Factory\bin\Debug\Help.Common.Factory.pdb
 D:\021draft\HelpWeb\Help.Common.Factory\obj\Debug\Help.Common.Factory.dll
 D:\021draft\HelpWeb\Help.Common.Factory\obj\Debug\Help.Common.Factory.pdb
 D:\021draft\HelpWeb\Help.Common.Factory\obj\Debug\Help.Common.Factory.csprojResolveAssemblyReference.cache
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Factory\bin\Debug\Help.Common.Factory.dll
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Factory\bin\Debug\Help.Common.Factory.pdb
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Factory\obj\Debug\Help.Common.Factory.csprojResolveAssemblyReference.cache
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Factory\obj\Debug\Help.Common.Factory.dll
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Factory\obj\Debug\Help.Common.Factory.pdb

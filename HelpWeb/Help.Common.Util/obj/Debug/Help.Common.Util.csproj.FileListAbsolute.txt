@@ -5,3 +5,10 @@ D:\021draft\HelpWeb\Help.Common.Util\bin\Debug\Newtonsoft.Json.xml
 D:\021draft\HelpWeb\Help.Common.Util\obj\Debug\Help.Common.Util.dll
 D:\021draft\HelpWeb\Help.Common.Util\obj\Debug\Help.Common.Util.pdb
 D:\021draft\HelpWeb\Help.Common.Util\obj\Debug\Help.Common.Util.csprojResolveAssemblyReference.cache
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Util\bin\Debug\Help.Common.Util.dll
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Util\bin\Debug\Help.Common.Util.pdb
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Util\bin\Debug\Newtonsoft.Json.dll
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Util\bin\Debug\Newtonsoft.Json.xml
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Util\obj\Debug\Help.Common.Util.csprojResolveAssemblyReference.cache
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Util\obj\Debug\Help.Common.Util.dll
+D:\006GitHub\gitcode\HelpWeb\Help.Common.Util\obj\Debug\Help.Common.Util.pdb

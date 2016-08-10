@@ -3,7 +3,6 @@
     <IncludeExtensions>
     </IncludeExtensions>
     <IgnoreExtensions>
-      <IgnoreExtension>.cs</IgnoreExtension>
       <IgnoreExtension>.js</IgnoreExtension>
     </IgnoreExtensions>
     <IgnoreFiles>

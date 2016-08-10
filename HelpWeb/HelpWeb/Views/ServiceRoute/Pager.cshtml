@@ -159,30 +159,30 @@
                     </td>
                     <td>
                         <div style="width: 220px;">
-                        <button type="button" class="btn btn-primary btn-xs updateButton" RouteID="@Model[i].RouteID" data-toggle="modal"
+                            <button type="button" class="btn btn-primary btn-xs updateButton" RouteID="@Model[i].RouteID" data-toggle="modal"
                     data-target="#updateServiceRouteModal">
-                            修改
-                        </button>
+                                修改
+                            </button>
 
-                        <button type="button" class="btn btn-default btn-xs validOperateButton" RouteID="@Model[i].RouteID" IsValid="@Model[i].IsValid" ContractName="@Model[i].ContractName">
-                            @if (Model[i].IsValid == 1)
-                            {
-                                <span>禁用</span>
-                            }
-                            else
-                            {
-                                <span>启用</span>
-                            }
-                        </button>
+                            <button type="button" class="btn btn-default btn-xs validOperateButton" RouteID="@Model[i].RouteID" IsValid="@Model[i].IsValid" ContractName="@Model[i].ContractName">
+                                @if (Model[i].IsValid == 1)
+                                {
+                                    <span>禁用</span>
+                                }
+                                else
+                                {
+                                    <span>启用</span>
+                                }
+                            </button>
 
-                        <button type="button" class="btn btn-primary btn-xs copyAddRefButton" RouteID="@Model[i].RouteID" data-toggle="modal"
+                            <button type="button" class="btn btn-primary btn-xs copyAddRefButton" RouteID="@Model[i].RouteID" data-toggle="modal"
                     data-target="#updateServiceRouteModal">
-                            复制添加
-                        </button>
-                        <button type="button" class="btn btn-default btn-xs deleteRefBtn" RouteID="@Model[i].RouteID" ContractName="@Model[i].ContractName">
-                            删除
-                        </button>
-                            </div>
+                                复制添加
+                            </button>
+                            <button type="button" class="btn btn-default btn-xs deleteRefBtn" RouteID="@Model[i].RouteID" ContractName="@Model[i].ContractName">
+                                删除
+                            </button>
+                        </div>
                     </td>
                 </tr>
                 }
@@ -255,6 +255,14 @@
 
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="ServiceType" value="{{:ServiceType}}" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="MachineNO" class="col-sm-3 control-label" style="text-align: right;">机房标示</label>
+
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" name="MachineNO" value="{{:MachineNO}}" />
                     </div>
                 </div>
 
