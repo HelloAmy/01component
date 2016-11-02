@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AttributeNode.cs" />
     <Compile Include="HttpClientExtensions.cs" />
     <Compile Include="PagedList.cs" />
     <Compile Include="IPagedList.cs" />

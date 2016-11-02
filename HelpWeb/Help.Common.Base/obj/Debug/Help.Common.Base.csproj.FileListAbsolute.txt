@@ -3,3 +3,8 @@ D:\021draft\HelpWeb\Help.Common.Base\bin\Debug\Help.Common.Base.pdb
 D:\021draft\HelpWeb\Help.Common.Base\obj\Debug\Help.Common.Base.dll
 D:\021draft\HelpWeb\Help.Common.Base\obj\Debug\Help.Common.Base.pdb
 D:\021draft\HelpWeb\Help.Common.Base\obj\Debug\Help.Common.Base.csprojResolveAssemblyReference.cache
+D:\01code\02mine\01component\HelpWeb\Help.Common.Base\bin\Debug\Help.Common.Base.dll
+D:\01code\02mine\01component\HelpWeb\Help.Common.Base\bin\Debug\Help.Common.Base.pdb
+D:\01code\02mine\01component\HelpWeb\Help.Common.Base\obj\Debug\Help.Common.Base.dll
+D:\01code\02mine\01component\HelpWeb\Help.Common.Base\obj\Debug\Help.Common.Base.pdb
+D:\01code\02mine\01component\HelpWeb\Help.Common.Base\obj\Debug\Help.Common.Base.csprojResolveAssemblyReference.cache
