@@ -1,5 +1,0 @@
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.Model\bin\Debug\Personnel.Amy.Model.dll
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.Model\bin\Debug\Personnel.Amy.Model.pdb
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.Model\obj\Debug\Personnel.Amy.Model.csprojResolveAssemblyReference.cache
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.Model\obj\Debug\Personnel.Amy.Model.dll
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.Model\obj\Debug\Personnel.Amy.Model.pdb

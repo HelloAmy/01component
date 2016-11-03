@@ -1,6 +1,0 @@
-2015-12-14 18:15:50    在 Common.Julius.LoggerComponent.Logging.WriteAppException(AppException appex, DateTime timepoint, String routeModuleName) 位置 D:\gitcode\Common.Julius.LoggerComponent\Common.Julius.LoggerComponent\01Log\Logging.cs:行号 35
-
-2015-12-14 18:25:42    在 Common.Julius.LoggerComponent.Logging.WriteAppException(AppException appex, DateTime timepoint, String routeModuleName) 位置 D:\gitcode\Common.Julius.LoggerComponent\Common.Julius.LoggerComponent\01Log\Logging.cs:行号 47
-
-2015-12-14 18:34:00    在 Common.Julius.LoggerComponent.Logging.WriteAppException(AppException appex, DateTime timepoint, String routeModuleName) 位置 D:\gitcode\Common.Julius.LoggerComponent\Common.Julius.LoggerComponent\01Log\Logging.cs:行号 48
-

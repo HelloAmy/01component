@@ -1,6 +1,0 @@
-D:\gitcode\Common.Julius.LoggerComponent\Common.Julius.LoggerComponent\bin\Debug\Common.Julius.LoggerComponent.dll
-D:\gitcode\Common.Julius.LoggerComponent\Common.Julius.LoggerComponent\bin\Debug\Common.Julius.LoggerComponent.pdb
-D:\gitcode\Common.Julius.LoggerComponent\Common.Julius.LoggerComponent\obj\Debug\ResolveAssemblyReference.cache
-D:\gitcode\Common.Julius.LoggerComponent\Common.Julius.LoggerComponent\obj\Debug\Common.Julius.LoggerComponent.dll
-D:\gitcode\Common.Julius.LoggerComponent\Common.Julius.LoggerComponent\obj\Debug\Common.Julius.LoggerComponent.pdb
-D:\gitcode\Common.Julius.LoggerComponent\Common.Julius.LoggerComponent\bin\Debug\MySql.Data.dll

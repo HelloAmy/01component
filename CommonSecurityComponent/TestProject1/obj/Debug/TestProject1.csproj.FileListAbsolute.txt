@@ -1,7 +1,0 @@
-D:\001code\CommonSecurityComponent\CommonSecurityComponent\TestProject1\bin\Debug\TestProject1.dll
-D:\001code\CommonSecurityComponent\CommonSecurityComponent\TestProject1\bin\Debug\TestProject1.pdb
-D:\001code\CommonSecurityComponent\CommonSecurityComponent\TestProject1\bin\Debug\Lucky.CommonSecurity.Tool.dll
-D:\001code\CommonSecurityComponent\CommonSecurityComponent\TestProject1\bin\Debug\Lucky.CommonSecurity.Tool.pdb
-D:\001code\CommonSecurityComponent\CommonSecurityComponent\TestProject1\obj\Debug\ResolveAssemblyReference.cache
-D:\001code\CommonSecurityComponent\CommonSecurityComponent\TestProject1\obj\Debug\TestProject1.dll
-D:\001code\CommonSecurityComponent\CommonSecurityComponent\TestProject1\obj\Debug\TestProject1.pdb

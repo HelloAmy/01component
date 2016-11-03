@@ -1,9 +1,0 @@
-D:\gitcode\Common.Julius.LoggerComponent\exeTest\bin\Debug\exeTest.exe
-D:\gitcode\Common.Julius.LoggerComponent\exeTest\bin\Debug\exeTest.pdb
-D:\gitcode\Common.Julius.LoggerComponent\exeTest\bin\Debug\Common.Julius.LoggerComponent.dll
-D:\gitcode\Common.Julius.LoggerComponent\exeTest\bin\Debug\Common.Julius.LoggerComponent.pdb
-D:\gitcode\Common.Julius.LoggerComponent\exeTest\obj\Debug\ResolveAssemblyReference.cache
-D:\gitcode\Common.Julius.LoggerComponent\exeTest\obj\Debug\exeTest.exe
-D:\gitcode\Common.Julius.LoggerComponent\exeTest\obj\Debug\exeTest.pdb
-D:\gitcode\Common.Julius.LoggerComponent\exeTest\bin\Debug\LoggerComponent.config
-D:\gitcode\Common.Julius.LoggerComponent\exeTest\bin\Debug\MySql.Data.dll

@@ -1,6 +1,0 @@
-时间:2015-12-10 15:37:22:488,日志ID:, 跟踪ID:,应用程序名:zhujinrong15121015372247316413本地IP：localhost,进程ID:12,错误码:测试
-	异常信息:没有什么错误
-没有上下文
-原始错误为null
-2015-12-10 15:55:04:241
-{"ApplicationName":"随便写","ErrorCode":"测试","ExceptionContext":"没有上下文","ExceptionLevel":0,"ExceptionMsg":"没有什么错误","LocalIP":"localhost","LogID":"","OrginalExceptionMsg":"原始错误为null","ThreadID":"12","TimePoint":"\/Date(1449734104241+0800)\/","TrackID":"zhujinrong15121015550422458449"}

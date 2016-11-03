@@ -1,8 +1,0 @@
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.IDAO\bin\Debug\Personnel.Amy.IDAO.dll
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.IDAO\bin\Debug\Personnel.Amy.IDAO.pdb
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.IDAO\bin\Debug\MySql.Data.dll
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.IDAO\bin\Debug\Personnel.Amy.Model.dll
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.IDAO\bin\Debug\Personnel.Amy.Model.pdb
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.IDAO\obj\Debug\Personnel.Amy.IDAO.csprojResolveAssemblyReference.cache
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.IDAO\obj\Debug\Personnel.Amy.IDAO.dll
-D:\001code\0010图书系统\AmyBookProject\Personnel.Amy.IDAO\obj\Debug\Personnel.Amy.IDAO.pdb
