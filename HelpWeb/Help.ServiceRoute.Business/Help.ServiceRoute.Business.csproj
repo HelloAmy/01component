@@ -55,8 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenerateCoderController.cs" />
-    <Compile Include="BJavaConvertCSharp.cs" />
     <Compile Include="RoleInfoController.cs" />
     <Compile Include="ServiceRouteController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

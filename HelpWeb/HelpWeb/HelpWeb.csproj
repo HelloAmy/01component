@@ -232,7 +232,6 @@
     <Content Include="Views\ServiceRoute\Pager.cshtml" />
     <Content Include="Views\RoleInfo\Index.cshtml" />
     <Content Include="Views\UserInfo\UserInfoManage.cshtml" />
-    <Content Include="Views\GenerateCoder\JaveConvertCSharpPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
