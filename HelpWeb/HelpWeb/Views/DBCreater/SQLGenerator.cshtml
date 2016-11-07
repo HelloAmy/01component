@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "SQL语句生成";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headSection{
+    <link href="~/Content/layui-v1.0.2/layui/css/layui.css" rel="stylesheet" />
+}
+
+@section scripts{
+    <script src="~/Content/layui-v1.0.2/layui/layui.js"></script>
+
+    <script>
+
+        layui.use('upload', function () {
+            layui.upload({
+                url: '/DBCreater/ImportExcelFile' //上传接口
+              , success: function (res) { //上传成功后的回调
+                  console.log(res)
+              }
+            });
+        });
+    </script>
+}
+
+<label>导入excel文件</label>
+
+<input type="file" name="file" lay-type="file" class="layui-upload-file"> 

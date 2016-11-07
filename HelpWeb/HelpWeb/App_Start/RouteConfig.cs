@@ -16,7 +16,7 @@ namespace HelpWeb
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "ServiceRoute", action = "Pager", id = UrlParameter.Optional }
+                defaults: new { controller = "DBCreater", action = "SQLGenerator", id = UrlParameter.Optional }
             );
         }
     }
