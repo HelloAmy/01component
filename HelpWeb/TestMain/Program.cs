@@ -1,4 +1,6 @@
-﻿using Help.Common.Util;
+﻿using Help.Common.APIModel.DBGenerator;
+using Help.Common.Util;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,13 +14,7 @@ namespace TestMain
     {
         static void Main(string[] args)
         {
-            TestReadExcel();
         }
-
-        private static void TestReadExcel()
-        {
-            string path = @"D:\01code\02mine\01component\HelpWeb\HelpWeb\Upload\UserManageDB.xls";
-            DataSet ds = ExcelUtil.GetExcelDataSet(path);
-        }
+ 
     }
 }

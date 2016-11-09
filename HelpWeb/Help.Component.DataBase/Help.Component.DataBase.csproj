@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D588326A-D71D-4729-8CAD-5AF33BDF4715}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{11C0621E-77C7-443C-B588-BD33B578510E}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestMain</RootNamespace>
-    <AssemblyName>TestMain</AssemblyName>
+    <RootNamespace>Help.Component.DataBase</RootNamespace>
+    <AssemblyName>Help.Component.DataBase</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,22 +39,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Business\BGeneratorSQL.cs" />
+    <Compile Include="Business\BGetTableDefineFromExcel.cs" />
+    <Compile Include="DAL\MySQLGeneratorSQLDAO.cs" />
+    <Compile Include="Factory\DALFactory.cs" />
+    <Compile Include="IDAL\IGeneratorSQL.cs" />
+    <Compile Include="Model\MDataBaseDefine.cs" />
+    <Compile Include="Model\MDataBaseType.cs" />
+    <Compile Include="Model\MFieldDefine.cs" />
+    <Compile Include="Model\MResult.cs" />
+    <Compile Include="Model\MTableDefine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Help.Common.APIModel\Help.Common.APIModel.csproj">
-      <Project>{b18cbea3-0f33-417e-99f8-cba645ebd573}</Project>
-      <Name>Help.Common.APIModel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Help.Common.Util\Help.Common.Util.csproj">
       <Project>{b135509f-33eb-466f-9fde-919dce331f06}</Project>
       <Name>Help.Common.Util</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

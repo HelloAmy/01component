@@ -71,6 +71,5 @@ namespace Help.Common.Util
 
             return strTableNames.ToList();
         }
-
     }
 }
