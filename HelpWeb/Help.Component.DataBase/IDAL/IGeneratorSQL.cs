@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Help.Component.DataBase
 {
-    
+    /// <summary>
+    /// 生成SQL接口
+    /// </summary>
     public interface IGeneratorSQL
     {
         /// <summary>

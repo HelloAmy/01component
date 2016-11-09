@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Help.Component.DataBase
 {
+    /// <summary>
+    /// 生成SQL业务类
+    /// </summary>
     public class BGeneratorSQL
     {
         /// <summary>

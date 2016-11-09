@@ -8,8 +8,16 @@ using System.Threading.Tasks;
 
 namespace Help.Component.DataBase
 {
+    /// <summary>
+    /// 从Excel中获取数据结构定义
+    /// </summary>
     public class BGetTableDefineFromExcel
     {
+        /// <summary>
+        /// 从Excel中获取数据结构定义
+        /// </summary>
+        /// <param name="path">路径</param>
+        /// <returns>结果</returns>
         public List<MTableDefine> GetTableDefineListFromExcel(string path)
         {
             DataSet ds = ExcelUtil.GetExcelDataSet(path);
@@ -17,13 +25,18 @@ namespace Help.Component.DataBase
             return ret;
         }
 
+        /// <summary>
+        /// 获取数据表定义列表
+        /// </summary>
+        /// <param name="ds">DataSet</param>
+        /// <returns>结果</returns>
         private List<MTableDefine> GetTableDefineList(DataSet ds)
         {
             List<MTableDefine> tb = new List<MTableDefine>();
 
             foreach (DataTable item in ds.Tables)
             {
-                var ret = getTableDefine(item);
+                var ret = GetTableDefine(item);
                 if (ret != null)
                 {
                     tb.Add(ret);
@@ -34,6 +47,11 @@ namespace Help.Component.DataBase
             return tb;
         }
 
+        /// <summary>
+        /// 获取表结构定义
+        /// </summary>
+        /// <param name="tb">DataTable</param>
+        /// <returns>结果</returns>
         private MTableDefine GetTableDefine(DataTable tb)
         {
             MTableDefine ret = new MTableDefine();
