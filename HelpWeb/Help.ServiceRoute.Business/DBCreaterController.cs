@@ -28,7 +28,7 @@ namespace Help.ServiceRoute.Business
                 }
 
                 // 生成文件名
-                var fileName = Path.Combine(Request.MapPath("~/Upload"), Path.GetFileName(file.FileName) + Guid.NewGuid().ToString().ToUpper());
+                var fileName = Path.Combine(Request.MapPath("~/Upload"), Guid.NewGuid().ToString().ToUpper() + Path.GetFileName(file.FileName));
 
                 // 存储文件
                 file.SaveAs(fileName);

@@ -5,6 +5,25 @@
 
 @section headSection{
     <link href="~/Content/layui-v1.0.2/layui/css/layui.css" rel="stylesheet" />
+    <style type="text/css">
+        #generatorSqlText {
+            width: 800px;
+            height: 600px;
+            resize: none;
+            background-color: #C7EDCC;
+            color: black;
+        }
+
+        .sqlgenerator-header {
+            width: 800px;
+            margin: 0px 0px 10px 0px;
+        }
+
+        .filediv {
+            float: right;
+            display: inline-block;
+        }
+    </style>
 }
 
 @section scripts{
@@ -16,13 +35,27 @@
             layui.upload({
                 url: '/DBCreater/ImportExcelFile' //上传接口
               , success: function (res) { //上传成功后的回调
-                  console.log(res)
+
+                  if (res.IsSuccess && (res.Result && res.Result.IsSuccess)) {
+                      $('#generatorSqlText').val(res.Result.Result);
+                  } else {
+                      layer.alert(res.ErrorMsg);
+                  }
               }
             });
         });
     </script>
 }
 
-<label>导入excel文件</label>
+<div id="pagebody" style="margin:20px;">
 
-<input type="file" name="file" lay-type="file" class="layui-upload-file"> 
+    <div class="sqlgenerator-header">
+        <label>生成MySQL建库建表语句</label>
+        <div class="filediv">
+            <input type="file" name="file" lay-type="file" class="layui-upload-file" style="float:right;">
+        </div>
+    </div>
+    <br />
+    <textarea id="generatorSqlText"></textarea>
+
+</div>

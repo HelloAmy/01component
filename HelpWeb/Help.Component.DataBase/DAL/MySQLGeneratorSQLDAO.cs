@@ -203,7 +203,7 @@ namespace Help.Component.DataBase
             string primaryKeyStr = string.Join(",", primarkeys.ToArray());
 
             // 主键
-            sb.AppendFormat("primary key({0}),", primarkeys).AppendLine();
+            sb.AppendFormat("primary key({0}),", primaryKeyStr).AppendLine();
 
 
             // 唯一索引
