@@ -1,5 +1,5 @@
-﻿using Help.Common.APIModel.DBGenerator;
-using Help.Common.Util;
+﻿using Help.Common.Util;
+using Help.Component.DataBase;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,19 @@ namespace TestMain
     {
         static void Main(string[] args)
         {
+            TestSQL();
         }
- 
+
+        public static void TestSQL()
+        {
+            BGetTableDefineFromExcel bll = new BGetTableDefineFromExcel();
+            var db = bll.GetTableDefineListFromExcel(@"D:\01code\02mine\01component\HelpWeb\HelpWeb\Upload\UserManageDB.xls");
+
+            string json = JsonConvert.SerializeObject(db);
+            BGeneratorSQL sqlBll = new BGeneratorSQL();
+            var ret = sqlBll.GeneratorSQL(db);
+            string jsonRet = JsonConvert.SerializeObject(ret);
+        }
+
     }
 }

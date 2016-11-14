@@ -83,6 +83,10 @@
       <Project>{81d876f8-c007-4abe-a508-992b76da0c69}</Project>
       <Name>Help.Common.ViewModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Help.Component.DataBase\Help.Component.DataBase.csproj">
+      <Project>{11c0621e-77c7-443c-b588-bd33b578510e}</Project>
+      <Name>Help.Component.DataBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

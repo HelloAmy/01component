@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Help.Component.DataBase;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,11 +27,18 @@ namespace Help.ServiceRoute.Business
                     return this.Json(new { IsSuccess = false, ErrorMsg = "没有文件！" });
                 }
 
-                var fileName = Path.Combine(Request.MapPath("~/Upload"), Path.GetFileName(file.FileName));
+                // 生成文件名
+                var fileName = Path.Combine(Request.MapPath("~/Upload"), Path.GetFileName(file.FileName) + Guid.NewGuid().ToString().ToUpper());
 
+                // 存储文件
                 file.SaveAs(fileName);
 
-                return this.Json(new { IsSuccess = true });
+                BGetTableDefineFromExcel bll = new BGetTableDefineFromExcel();
+                var result = bll.GetTableDefineListFromExcel(fileName);
+
+                BGeneratorSQL generatorSql = new BGeneratorSQL();
+                var sqlResult = generatorSql.GeneratorSQL(result);
+                return this.Json(new { IsSuccess = true, Result = sqlResult });
             }
             catch (Exception ex)
             {

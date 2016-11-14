@@ -18,11 +18,40 @@ namespace Help.Component.DataBase
         /// </summary>
         /// <param name="path">路径</param>
         /// <returns>结果</returns>
-        public List<MTableDefine> GetTableDefineListFromExcel(string path)
+        public MDataBaseDefine GetTableDefineListFromExcel(string path)
         {
             DataSet ds = ExcelUtil.GetExcelDataSet(path);
-            var ret = this.GetTableDefineList(ds);
-            return ret;
+            var tableList = this.GetTableDefineList(ds);
+
+            var db = this.GetDataBaseDefine(ds);
+            db.TableList = tableList;
+
+            return db;
+        }
+
+        private MDataBaseDefine GetDataBaseDefine(DataSet ds)
+        {
+            MDataBaseDefine model = new MDataBaseDefine();
+
+            DataTable tb = ds.Tables["数据表一栏$"];
+
+            model.DataBaseName = tb.Rows[1][1].ToString();
+            string databaseType = tb.Rows[2][1].ToString();
+
+            if (!string.IsNullOrEmpty(databaseType) && databaseType.ToUpper().Trim() == "MYSQL")
+            {
+                model.DataBaseType = MDataBaseType.MySQL;
+            }
+            else
+            {
+                model.DataBaseType = MDataBaseType.UNKNOW;
+            }
+
+            model.ServerAddress = tb.Rows[3][1].ToString();
+            model.ReadAccount = tb.Rows[5][1].ToString();
+            model.WriteAccount = tb.Rows[5][1].ToString();
+
+            return model;
         }
 
         /// <summary>

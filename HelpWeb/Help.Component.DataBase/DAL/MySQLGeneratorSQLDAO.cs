@@ -121,7 +121,7 @@ namespace Help.Component.DataBase
                     return false;
                 }
 
-                if (table.FieldList.Exists(sa => !string.IsNullOrEmpty(sa.FieldName)))
+                if (table.FieldList.Exists(sa => string.IsNullOrEmpty(sa.FieldName)))
                 {
 
                     errorMsg = string.Format("表:{0},存在字段名为空的字段，不能正确建表", table.TableName);
@@ -192,7 +192,7 @@ namespace Help.Component.DataBase
             // 字段
             foreach (var field in tb.FieldList)
             {
-                sb.AppendFormat("{0} {1}({2}) not null default '{3}' COMMENT '{4}',", field.FieldName, field.DataType, field.Length, field.FieldNameCH + ";" + field.ValueConstraint).AppendLine();
+                sb.AppendFormat("{0} {1}({2}) not null default '{3}' COMMENT '{4}',", field.FieldName, field.DataType, field.Length, field.DefaultValue, field.FieldNameCH + ";" + field.ValueConstraint).AppendLine();
             }
 
             var primarkeys = (from p in tb.FieldList
