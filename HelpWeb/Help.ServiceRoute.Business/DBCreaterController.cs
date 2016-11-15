@@ -28,7 +28,13 @@ namespace Help.ServiceRoute.Business
                 }
 
                 // 生成文件名
-                var fileName = Path.Combine(Request.MapPath("~/Upload"), Guid.NewGuid().ToString().ToUpper() + Path.GetFileName(file.FileName));
+                var fileName = Path.Combine(Request.MapPath("~/Upload/" + DateTime.Now.ToString("yyyyMM")), Guid.NewGuid().ToString().ToUpper() + Path.GetFileName(file.FileName));
+
+                // 按月存储文件
+                if (Directory.Exists(Request.MapPath("~/Upload/" + DateTime.Now.ToString("yyyyMM"))) == false)
+                {
+                    Directory.CreateDirectory(Request.MapPath("~/Upload/" + DateTime.Now.ToString("yyyyMM")));
+                }
 
                 // 存储文件
                 file.SaveAs(fileName);
