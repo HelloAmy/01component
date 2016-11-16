@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Help.Component.DataBase
 {
-    public class MySQLGeneratorSQLDAO : IGeneratorSQL
+    public class MySQLGeneratoDAO : IGenerator
     {
         public MResult<string> GeneratorSQL(MDataBaseDefine db)
         {

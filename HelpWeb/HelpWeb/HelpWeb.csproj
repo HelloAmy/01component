@@ -140,6 +140,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\menu-bg_83f126e.png" />
     <Content Include="Content\layui-v1.0.2\layui\css\layui.css" />
     <Content Include="Content\layui-v1.0.2\layui\css\mobile.css" />
     <Content Include="Content\layui-v1.0.2\layui\css\modules\code.css" />

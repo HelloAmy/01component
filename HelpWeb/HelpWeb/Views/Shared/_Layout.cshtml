@@ -4,11 +4,92 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/Content/layui-v1.0.2/layui/css/layui.css" rel="stylesheet" />
+
+    <style>
+        #bodyLeft {
+            width: 200px;
+            display: inline-block;
+            float: left;
+        }
+
+        #body-header {
+            height: 60px;
+        }
+
+        #bodyContent {
+            display: inline-block;
+        }
+
+        #menu ul {
+        }
+
+        .first-menu {
+            padding: 6px 6px 6px 10px;
+            font-size: 16px;
+            line-height: 26px;
+            border: 1px solid #C1C1C1;
+            background: url(/Content/images/menu-bg_83f126e.png) repeat-x;
+            display: block;
+            color: white;
+            border-radius: 3px;
+        }
+
+        #menu ul li dl dd {
+            line-height: 26px;
+            font-size: 14px;
+            line-height: 24px;
+            border: 1px dotted #C1C1C1;
+            border-radius: 2px;
+            padding: 4px 4px 4px 34px;
+            background-color: #B6FEB6;
+        }
+
+            #menu ul li dl dd:hover {
+                background-color: #90EE90;
+                color: white;
+            }
+
+
+        #menu a :visited {
+            text-decoration: none;
+            color: white;
+        }
+
+        body {
+            background-color: #B6FEB6;
+        }
+
+        #content-top {
+            height: 40px;
+        }
+    </style>
     @RenderSection("headSection", false)
 </head>
 <body>
-    @RenderBody()
-    @RenderSection("scripts", false)
+
+    <div id="bodyLeft">
+        <div id="menu">
+            <ul>
+                <li>
+                    <a href="#" class="first-menu">工具</a>
+                    <dl>
+                        <dd><a href="/DBCreater/SQLGenerator">生成SQL</a></dd>
+                        <dd><a href="/DBCreater/SQLGenerator">生成SQL</a></dd>
+                        <dd><a href="/DBCreater/SQLGenerator">生成SQL</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content-top"></div>
+        @RenderBody()
+    </div>
+
     <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script src="~/Content/layui-v1.0.2/layui/layui.js"></script>
+    @RenderSection("scripts", false)
 </body>
 </html>

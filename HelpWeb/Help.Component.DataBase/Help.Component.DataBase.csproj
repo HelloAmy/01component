@@ -41,9 +41,9 @@
   <ItemGroup>
     <Compile Include="Business\BGeneratorSQL.cs" />
     <Compile Include="Business\BGetTableDefineFromExcel.cs" />
-    <Compile Include="DAL\MySQLGeneratorSQLDAO.cs" />
+    <Compile Include="DAL\MySQLGeneratorDAO.cs" />
     <Compile Include="Factory\DALFactory.cs" />
-    <Compile Include="IDAL\IGeneratorSQL.cs" />
+    <Compile Include="IDAL\IGenerator.cs" />
     <Compile Include="Model\MDataBaseDefine.cs" />
     <Compile Include="Model\MDataBaseType.cs" />
     <Compile Include="Model\MFieldDefine.cs" />

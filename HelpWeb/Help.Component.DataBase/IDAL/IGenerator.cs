@@ -9,7 +9,7 @@ namespace Help.Component.DataBase
     /// <summary>
     /// 生成SQL接口
     /// </summary>
-    public interface IGeneratorSQL
+    public interface IGenerator
     {
         /// <summary>
         /// 生成建库建表语句
