@@ -67,6 +67,22 @@ namespace Help.Component.DataBase
             };
         }
 
+        public MResult<Dictionary<string, string>> GenneratorModelList(MDataBaseDefine db, string namespaceStr)
+        {
+            MResult<Dictionary<string, string>> ret = new MResult<Dictionary<string, string>>();
+
+            return ret;
+        }
+
+        public string GeneratorModel(MTableDefine table, string namespaceStr)
+        {
+            StringBuilder sb = new StringBuilder();
+
+
+
+            return sb.ToString();
+        }
+
         private bool CheckGeneratorSQL(MDataBaseDefine db, out string errorMsg)
         {
             if (db == null)
@@ -177,7 +193,7 @@ namespace Help.Component.DataBase
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("/* 建立数据库{{DataBaseName}} */").AppendLine();
-            sb.AppendFormat("create database {0} default charset utf8 collate utf8_general_ci;", db.DataBaseName).AppendLine();
+            sb.AppendFormat("CREATE DATABASE {0} DEFAULT charset utf8 collate utf8_general_ci;", db.DataBaseName).AppendLine();
 
             return sb.ToString();
         }
@@ -192,7 +208,26 @@ namespace Help.Component.DataBase
             // 字段
             foreach (var field in tb.FieldList)
             {
-                sb.AppendFormat("{0} {1}({2}) not null default '{3}' COMMENT '{4}',", field.FieldName, field.DataType, field.Length, field.DefaultValue, field.FieldNameCH + ";" + field.ValueConstraint).AppendLine();
+                if (field.FieldName.ToUpper() == "MODIFYTIME" && field.DefaultValue == "CURRENT_TIMESTAMP")
+                {
+                    sb.AppendFormat("{0} {1} NOT NULL DEFAULT {2} ON UPDATE {2} COMMENT '{3}',", field.FieldName, field.DataType, field.DefaultValue, field.FieldNameCH + ";" + field.ValueConstraint).AppendLine();
+                }
+                else if (field.DataType.ToUpper() == "DATETIME")
+                {
+                    sb.AppendFormat("{0} {1} NOT NULL DEFAULT {2} COMMENT '{3}',", field.FieldName, field.DataType, field.DefaultValue, field.FieldNameCH + ";" + field.ValueConstraint).AppendLine();
+                }
+                else
+                {
+                    if (field.Length == 0)
+                    {
+                        // 没有长度
+                        sb.AppendFormat("{0} {1} NOT NULL DEFAULT '{2}' COMMENT '{3}',", field.FieldName, field.DataType, field.DefaultValue, field.FieldNameCH + ";" + field.ValueConstraint).AppendLine();
+                    }
+                    else
+                    {
+                        sb.AppendFormat("{0} {1}({2}) NOT NULL DEFAULT '{3}' COMMENT '{4}',", field.FieldName, field.DataType, field.Length, field.DefaultValue, field.FieldNameCH + ";" + field.ValueConstraint).AppendLine();
+                    }
+                }
             }
 
             var primarkeys = (from p in tb.FieldList
@@ -203,7 +238,7 @@ namespace Help.Component.DataBase
             string primaryKeyStr = string.Join(",", primarkeys.ToArray());
 
             // 主键
-            sb.AppendFormat("primary key({0}),", primaryKeyStr).AppendLine();
+            sb.AppendFormat("PRIMARY KEY({0}),", primaryKeyStr).AppendLine();
 
 
             // 唯一索引
@@ -228,7 +263,7 @@ namespace Help.Component.DataBase
 
                 string indexNoListName = string.Join("_", indexNoList.ToArray());
 
-                sb.AppendFormat("INDEX  {0}_{1} ({2}) ", tb.TableName, indexNoListName, indexNoStr).AppendLine();
+                sb.AppendFormat("INDEX  {0}_{1} ({2}),", tb.TableName, indexNoListName, indexNoStr).AppendLine();
             }
 
             // 去掉最后一个逗号
