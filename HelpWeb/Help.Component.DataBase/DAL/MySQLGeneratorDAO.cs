@@ -192,7 +192,7 @@ namespace Help.Component.DataBase
         private string GetCreateDataBaseSQL(MDataBaseDefine db)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("/* 建立数据库{{DataBaseName}} */").AppendLine();
+            sb.AppendFormat("/* 建立数据库{0} */", db.DataBaseName).AppendLine();
             sb.AppendFormat("CREATE DATABASE {0} DEFAULT charset utf8 collate utf8_general_ci;", db.DataBaseName).AppendLine();
 
             return sb.ToString();
