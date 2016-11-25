@@ -19,8 +19,6 @@ namespace Help.Common.Base
                 FormsAuthentication.RedirectToLoginPage();
             }
 
-
-
             base.OnActionExecuting(filterContext);
         }
     }
