@@ -18,6 +18,11 @@ namespace Help.ServiceRoute.Business
             return this.View();
         }
 
+        public ActionResult ShowDataBaseInfo()
+        {
+            return this.View();
+        }
+
         public JsonResult ImportExcelFile(HttpPostedFileBase file)
         {
             try

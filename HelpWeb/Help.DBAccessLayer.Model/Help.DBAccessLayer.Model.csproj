@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MColumn.cs" />
+    <Compile Include="MDataBaseType.cs" />
+    <Compile Include="MDBAccessType.cs" />
     <Compile Include="MTableDesc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

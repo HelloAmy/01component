@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Help.DBAccessLayer.Factory
+namespace Help.DBAccessLayer.Model
 {
     public enum MDataBaseType
     {
