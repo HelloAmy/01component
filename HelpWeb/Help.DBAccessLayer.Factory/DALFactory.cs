@@ -10,7 +10,7 @@ namespace Help.DBAccessLayer.Factory
 {
     public class DALFactory
     {
-        public IGetSchema GetSchemaDAO(MDataBaseType dbType, MDBAccessType accessType)
+        public static IGetSchema GetSchemaDAO(MDataBaseType dbType, MDBAccessType accessType)
         {
             switch (dbType)
             {
