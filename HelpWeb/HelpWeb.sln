@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Help.DBAccessLayer.IDAL", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Help.DBAccessLayer.Factory", "Help.DBAccessLayer.Factory\Help.DBAccessLayer.Factory.csproj", "{56070205-2B64-40BA-8BAC-06147C6B8D7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Help.DBAccessLayer.Model", "Help.DBAccessLayer.Model\Help.DBAccessLayer.Model.csproj", "{739A4717-4144-49D6-AEBE-CF7E428E548B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{56070205-2B64-40BA-8BAC-06147C6B8D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56070205-2B64-40BA-8BAC-06147C6B8D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56070205-2B64-40BA-8BAC-06147C6B8D7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{739A4717-4144-49D6-AEBE-CF7E428E548B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739A4717-4144-49D6-AEBE-CF7E428E548B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739A4717-4144-49D6-AEBE-CF7E428E548B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739A4717-4144-49D6-AEBE-CF7E428E548B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,5 +119,6 @@ Global
 		{7B7E2B82-EA9D-4F4F-A979-D2881CD55175} = {5A9C7006-5936-4BD1-B022-F9AA04832439}
 		{4833D0E7-5516-4793-BEDC-836F2CCE6589} = {5A9C7006-5936-4BD1-B022-F9AA04832439}
 		{56070205-2B64-40BA-8BAC-06147C6B8D7C} = {5A9C7006-5936-4BD1-B022-F9AA04832439}
+		{739A4717-4144-49D6-AEBE-CF7E428E548B} = {5A9C7006-5936-4BD1-B022-F9AA04832439}
 	EndGlobalSection
 EndGlobal
