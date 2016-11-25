@@ -28,5 +28,20 @@ namespace Help.DBAccessLayer.Business
 
             return ret;
         }
+
+        public List<MColumn> GetColumnList(string tableName)
+        {
+            string connstr = ConnectionFactory.TRSDbConnString;
+            List<MColumn> ret = new List<MColumn>();
+            using (DB2Connection conn = new DB2Connection(connstr))
+            {
+                conn.Open();
+                var dao = DALFactory.GetSchemaDAO(MDataBaseType.DB2, MDBAccessType.WRITE);
+
+                ret = dao.GetColumnList(conn, tableName);
+            }
+
+            return ret;
+        }
     }
 }

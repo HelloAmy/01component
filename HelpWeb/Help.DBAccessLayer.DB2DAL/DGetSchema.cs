@@ -42,5 +42,35 @@ namespace Help.DBAccessLayer.DB2DAL
 
             return ret;
         }
+
+        public List<MColumn> GetColumnList(IDbConnection conn, string tableName)
+        {
+            string sql = string.Format(@"SELECT NAME,TBNAME,TBCREATOR,REMARKS,COLTYPE,LENGTH, NULLS,DEFAULT,KEYSEQ
+FROM sysibm.syscolumns where tbname ='{0}'", tableName);
+
+            DB2Command cmd = new DB2Command(sql, (DB2Connection)conn);
+            List<MColumn> ret = new List<MColumn>();
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    MColumn model = new MColumn();
+                    model.ColumnName = DBUtil.GetDBValueStr(reader, "NAME");
+                    model.Creator = DBUtil.GetDBValueStr(reader, "TBCREATOR");
+                    model.Remarks = DBUtil.GetDBValueStr(reader, "REMARKS");
+                    model.ColType = DBUtil.GetDBValueStr(reader, "COLTYPE");
+                    model.Length = DBUtil.GetDBValueInt(reader, "LENGTH");
+                    model.IsNullable = DBUtil.GetDBValueBool(reader, "NULLS");
+                    model.DefaultValue = DBUtil.GetDBValueStr(reader, "DEFAULT");
+                    model.KeySeq = DBUtil.GetDBValueInt(reader, "KEYSEQ");
+
+                    ret.Add(model);
+                }
+            }
+
+            return ret;
+        }
+
     }
 }
