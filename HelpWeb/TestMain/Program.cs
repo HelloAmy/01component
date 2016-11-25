@@ -1,5 +1,6 @@
 ﻿using Help.Common.Util;
 using Help.Component.DataBase;
+using Help.DBAccessLayer.Business;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ namespace TestMain
     {
         static void Main(string[] args)
         {
-            TestSQL();
+            TestGetSchema();
         }
 
         public static void TestSQL()
@@ -28,5 +29,10 @@ namespace TestMain
             string jsonRet = JsonConvert.SerializeObject(ret);
         }
 
+        public static void TestGetSchema()
+        {
+            BGetSchema bll = new BGetSchema();
+            var result = bll.GetTableList("TRSBANKUSR");
+        }
     }
 }

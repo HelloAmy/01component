@@ -1,5 +1,6 @@
 ﻿using Help.DBAccessLayer.Factory;
 using Help.DBAccessLayer.Model;
+using IBM.Data.DB2;
 using System;
 using System.Collections.Generic;
 using System.Data.OleDb;
@@ -17,8 +18,9 @@ namespace Help.DBAccessLayer.Business
 
             List<MTableDesc> ret = null;
 
-            using (OleDbConnection conn = new OleDbConnection(connstr))
+            using (DB2Connection conn = new DB2Connection(connstr))
             {
+                conn.Open();
                 var dao = DALFactory.GetSchemaDAO(MDataBaseType.DB2, MDBAccessType.WRITE);
 
                 ret = dao.GetTableList(conn, creator);

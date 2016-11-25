@@ -1,5 +1,6 @@
 ﻿using Help.DBAccessLayer.IDAL;
 using Help.DBAccessLayer.Model;
+using IBM.Data.DB2;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -21,7 +22,7 @@ namespace Help.DBAccessLayer.DB2DAL
                 strSql += string.Format("and creator='{0}'", creater);
             }
 
-            OleDbCommand cmd = new OleDbCommand(strSql, (OleDbConnection)conn);
+            DB2Command cmd = new DB2Command(strSql, (DB2Connection)conn);
 
             List<MTableDesc> ret = new List<MTableDesc>();
             using (var reader = cmd.ExecuteReader())
