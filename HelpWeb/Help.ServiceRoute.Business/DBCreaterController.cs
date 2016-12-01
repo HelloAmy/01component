@@ -56,5 +56,12 @@ namespace Help.ServiceRoute.Business
                 return this.Json(new { IsSuccess = false, ErrorMsg = ex.Message.ToString() });
             }
         }
+
+        public ActionResult DownloadFile(string fileName, string contentType)
+        {
+            var path = Server.MapPath("~/Upload/" + fileName);
+            var name = Path.GetFileName(path);
+            return File(path, "application/zip-x-compressed", name);
+        }
     }
 }

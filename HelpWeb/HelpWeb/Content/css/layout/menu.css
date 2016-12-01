@@ -1,0 +1,43 @@
+﻿#menu ul li {
+    list-style: none;
+}
+
+#menu ul {
+    padding: 0px;
+}
+
+.first-menu {
+    padding: 6px 6px 6px 10px;
+    font-size: 16px;
+    line-height: 26px;
+    border: 1px solid #C1C1C1;
+    background: url(/Content/images/menu-bg_83f126e.png) repeat-x;
+    display: block;
+    color: white;
+    border-radius: 3px;
+}
+
+#menu ul li dl dd {
+    line-height: 26px;
+    font-size: 14px;
+    line-height: 24px;
+    border: 1px dotted #C1C1C1;
+    border-radius: 2px;
+    padding: 4px 4px 4px 34px;
+    background-color: #B6FEB6;
+}
+
+    #menu ul li dl dd:hover {
+        background-color: #90EE90;
+        color: white;
+    }
+
+
+#menu a {
+    text-decoration: none;
+}
+
+    #menu a :visited {
+        text-decoration: none;
+        color: white;
+    }

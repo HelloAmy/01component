@@ -38,6 +38,27 @@ namespace HelpWeb
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            // file-input
+            bundles.Add(new StyleBundle("~/Content/bootstrap-fileinput/fileinput.css")
+                .IncludeDirectory("~/Content/bootstrap-fileinput", "*.css", true));
+
+            bundles.Add(new ScriptBundle("~/Content/bootstrap-fileinput/js/fileinput.js")
+                .Include("~/Content/bootstrap-fileinput/js/fileinput.js")
+                .Include("~/Content/bootstrap-fileinput/js/locales/zh.js")
+                .Include("~/Content/bootstrap-fileinput/js/plugins/canvas-to-blob.js")
+                .Include("~/Content/bootstrap-fileinput/js/plugins/purify.js")
+                .Include("~/Content/bootstrap-fileinput/js/plugins/sortable.js"));
+
+            // common js
+            bundles.Add(new ScriptBundle("~/Scripts/common/common.js")
+                .Include("~/Scripts/common/jquery-1.12.4.js")
+                .Include("~/Scripts/common/jquery.jsRender.min.js")
+                .Include("~/Scripts/common/jquery.plugin.js")
+                .Include("~/Scripts/common/sea.js")
+                .Include("~/Scripts/common/moment.js")
+                .Include("~/Scripts/common/underscore.js")
+                );
         }
     }
 }

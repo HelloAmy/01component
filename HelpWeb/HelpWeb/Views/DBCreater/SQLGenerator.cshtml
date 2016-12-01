@@ -4,6 +4,8 @@
 }
 
 @section headSection{
+
+    @Styles.Render("~/Content/bootstrap-fileinput/fileinput.css")
     <style type="text/css">
         #generatorSqlText {
             width: 800px;
@@ -26,34 +28,46 @@
 }
 
 @section scripts{
-
+    <!-- @Scripts.Render("~/Content/bootstrap-fileinput/js/fileinput.js") -->
     <script>
-
-        layui.use('upload', function () {
-            layui.upload({
-                url: '/DBCreater/ImportExcelFile' //上传接口
-              , success: function (res) { //上传成功后的回调
-
-                  if (res.IsSuccess && (res.Result && res.Result.IsSuccess)) {
-                      $('#generatorSqlText').val(res.Result.Result);
-                  } else {
-                      layer.alert(res.ErrorMsg);
-                  }
-              }
-            });
+        seajs.config({
+            preload: ["/Content/bootstrap-fileinput/js/fileinput.js", "/Content/bootstrap-fileinput/js/locales/zh.js", "/Scripts/DBCreater/SQLGenerator.js"]
         });
+
+        seajs.use(["/Content/bootstrap-fileinput/js/fileinput.js", "/Content/bootstrap-fileinput/js/locales/zh.js", "/Scripts/DBCreater/SQLGenerator.js"]);
+
     </script>
 }
 
-<div id="pagebody" style="margin:20px;">
+<div id="pagebody">
 
     <div class="sqlgenerator-header">
         <label>生成建库建表语句</label>
-        <div class="filediv">
-            <input type="file" name="file" lay-type="file" class="layui-upload-file" style="float:right;">
+
+        <div style="display:inline-block;margin-left:20px;">
+            <button id="btn_import" type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-import" aria-hidden="true"></span>导入
+            </button>
         </div>
     </div>
-    <br />
-    <textarea id="generatorSqlText"></textarea>
+    <form>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="z-index:9999;">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">请选择Excel文件</h4>
+                    </div>
+                    <div class="modal-body" id="uploadFile-modal-body">
+                        <a href="/DBCreater/DownloadFile?fileName=UserManageDB.xls&contentType=xls" class="form-control" style="border:none;">下载导入模板</a>
+                        <input type="file" name="file" id="uploadFile" multiple class="file-loading" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
 
 </div>
+<textarea id="generatorSqlText"></textarea>
+

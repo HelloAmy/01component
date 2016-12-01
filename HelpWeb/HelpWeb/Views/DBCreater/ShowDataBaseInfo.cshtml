@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "数据库信息显示";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section headSection{
+
+    <style type="text/css">
+        #queryDBForm label {
+            text-align: right;
+            width: 78px;
+        }
+
+       
+    </style>
+}
+
+<form id="queryDBForm">
+    <div class="container" style="padding: 10px;width: 1180px;">
+        <div class="row" style="height: 40px;">
+            <div class="col-sm-4 col-md-4">
+                <label class="control-label" for="dbtype">数据库类型:</label>
+                <select name="dbtype" class="input-control">
+                    <option></option>
+                    <option value="2">DB2</option>
+                </select>
+            </div>
+
+            <div class="col-sm-4 col-md-4">
+                <label for="server" class="control-label">服务器:</label>
+                <input type="text" name="server" class="input-control" />
+            </div>
+
+             <div class="col-sm-4 col-md-4">
+                <label class="control-label" for="dbname">数据库名:</label>
+                <input type="text" name="dbname" class="input-control" />
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-4 col-md-4">
+                <label class="control-label" for="username">用户名:</label>
+                <input type="text" name="username" class="input-control" />
+            </div>
+
+            <div class="col-sm-4 col-md-4">
+                <label class="control-label" for="pwd">密码:</label>
+                <input type="password" name="pwd" class="input-control" />
+            </div>
+
+             <div class="col-sm-4 col-md-4">
+             <label class="control-label"><button class="btn" style="margin-right: 10px;">查询</button></label>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
