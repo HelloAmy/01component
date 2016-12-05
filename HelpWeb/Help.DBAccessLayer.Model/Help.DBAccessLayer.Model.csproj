@@ -43,6 +43,8 @@
     <Compile Include="MDataBaseType.cs" />
     <Compile Include="MDBAccessType.cs" />
     <Compile Include="MTableDesc.cs" />
+    <Compile Include="PagerQueryModel\MPagerInParam.cs" />
+    <Compile Include="PagerQueryModel\MPagerReturn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
