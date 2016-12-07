@@ -14,5 +14,10 @@ namespace Lucky.PrimaryKeyGenerator.Component
         /// 未知数据库名
         /// </summary>
         public const string UnKnownDataBase = "UnKnownDataBase";
+
+        /// <summary>
+        /// The user manager database
+        /// </summary>
+        public const string UserManagerDB = "UserManagerDB";
     }
 }

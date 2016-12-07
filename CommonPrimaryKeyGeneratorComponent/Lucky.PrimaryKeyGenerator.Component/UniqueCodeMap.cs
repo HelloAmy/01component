@@ -41,10 +41,23 @@ namespace Lucky.PrimaryKeyGenerator.Component
             {
                 lock (lockObj)
                 {
-                    Dictionary<string, string> unknown = new Dictionary<string, string>();
-                    unknown.Add(TableName.UnknowTableName, "un00");
-                    uniqueCodeMap = new Dictionary<string, Dictionary<string, string>>();
-                    uniqueCodeMap.Add(DataBaseName.UnKnownDataBase, unknown);
+
+                    uniqueCodeMap = new Dictionary<string, Dictionary<string, string>>()
+                    {
+                        { 
+                            DataBaseName.UnKnownDataBase, new Dictionary<string,string>()
+                            {
+                                { TableName.UnknowTableName,"un00" }
+                            }
+                        },
+                        { 
+                            DataBaseName.UserManagerDB, new Dictionary<string,string>()
+                            { 
+                                { TableName.UserManagerDB_RoleInfo, "us00" }
+                            }
+                        }
+                    };
+
                 }
             }
         }

@@ -66,8 +66,8 @@ namespace TestProject1
             //
             // TODO: 在此	添加测试逻辑
             //
+            string ret = PrimaryKeyFactory.NewPrimaryKey(DataBaseName.UserManagerDB, TableName.UserManagerDB_RoleInfo);
 
-            IPHelper.GetLocalIpV6List();
         }
     }
 }
