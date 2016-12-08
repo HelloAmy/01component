@@ -32,14 +32,14 @@ namespace Help.DBAccessLayer.MySQLDAL
                 sb.AppendFormat(" WHERE {0}", para.Condition);
             }
 
+            if (!string.IsNullOrEmpty(para.Sort))
+            {
+                sb.AppendFormat(" ORDER BY {0}", para.Sort);
+            }
+
             int start = (para.PageIndex - 1) * para.PageSize;
             int end = para.PageIndex * para.PageSize;
             sb.AppendFormat(" LIMIT {0},{1}", start, end);
-
-            if (!string.IsNullOrEmpty(para.Sort))
-            {
-                sb.AppendFormat(" {0}", para.Sort);
-            }
 
             string sql = sb.ToString();
 
@@ -52,6 +52,8 @@ namespace Help.DBAccessLayer.MySQLDAL
                     ParameterName = item.ParameterName,
                     Value = item.Value,
                 };
+
+                list.Add(model);
             }
 
             object count = MySqlHelper.ExecuteScalar((MySqlConnection)conn, countsql, list.ToArray());

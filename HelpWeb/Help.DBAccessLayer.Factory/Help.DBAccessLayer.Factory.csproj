@@ -53,10 +53,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Help.DBAccessLayer.DB2DAL\Help.DBAccessLayer.DB2DAL.csproj">
-      <Project>{7b7e2b82-ea9d-4f4f-a979-d2881cd55175}</Project>
-      <Name>Help.DBAccessLayer.DB2DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Help.DBAccessLayer.IDAL\Help.DBAccessLayer.IDAL.csproj">
       <Project>{4833d0e7-5516-4793-bedc-836f2cce6589}</Project>
       <Name>Help.DBAccessLayer.IDAL</Name>

@@ -17,12 +17,15 @@ using System.Collections.Generic;
 using System.Data;
 using System.Web.Mvc;
 using Help.Common.Factory;
-using Help.Common.Util;
 using Help.Common.ViewModel;
 using Help.DataService.VModel;
 using Help.DataService.VModel.AmyDB;
 using Help.DataService.VModel.PagerService;
 using Newtonsoft.Json;
+using MPagerInParamDAO = Help.DBAccessLayer.Model.PagerQueryModel.MPagerInParam;
+using MPagerReturnDAO = Help.DBAccessLayer.Model.PagerQueryModel.MPagerReturn;
+using System.Data.SqlClient;
+using System.Text;
 
 namespace Help.ServiceRoute.Business
 {
@@ -43,19 +46,25 @@ namespace Help.ServiceRoute.Business
         /// <returns>结果</returns>
         public ActionResult Index(int pageIndex = 1)
         {
-            MPagerInParam param = new MPagerInParam()
+            string where = null;
+            List<SqlParameter> condition = this.GetConditon(out where);
+
+            MPagerInParamDAO param = new MPagerInParamDAO()
             {
-                DataBaseName = "AmyDBRead",
+                DataBaseName = "UsermanagedbRead",
                 FieldNames = "KeyID, RoleName,RoleAlias, ModifyTime,AddTime,IsValid,IsDelete",
                 PageIndex = pageIndex,
-                Parameters = this.GetConditon(),
+                Parameters = condition,
                 PageSize = 20,
                 TableName = "RoleInfo",
-                Sort = "ModifyTime DESC"
+                Sort = "ModifyTime DESC",
+                Condition = where,
+                DataBaseType = DBAccessLayer.Model.MDataBaseType.MYSQL,
+
             };
 
             string json = JsonConvert.SerializeObject(param);
-            MPagerOutParam result = WebApiHelper.Get<MPagerOutParam>(this.dataServiceUrl + "/PagerService", "json=" + json);
+            MPagerReturnDAO result = ServiceFactory.GetPagerContractDAO().PagerQuery(param);
 
             List<VMRoleInfo> list = new List<VMRoleInfo>();
             if (result != null && result.PageData != null && result.PageData.Rows.Count > 0)
@@ -84,25 +93,32 @@ namespace Help.ServiceRoute.Business
         /// GetConditon
         /// </summary>
         /// <returns>结果</returns>
-        List<MSQLParameter> GetConditon()
+        List<SqlParameter> GetConditon(out string where)
         {
-            List<MSQLParameter> sqlparams = new List<MSQLParameter>();
-            sqlparams.Add(new MSQLParameter("@IsDelete", MySqlDbTypeDefine.Int32) { Value = 0 });
+            StringBuilder sb = new StringBuilder();
+            List<SqlParameter> sqlparams = new List<SqlParameter>();
+
+            sqlparams.Add(new SqlParameter("@IsDelete", SqlDbType.Int) { Value = 0 });
+            sb.AppendFormat(" IsDelete=@IsDelete AND");
             if (this.Request.QueryString.Count > 0)
             {
                 if (!string.IsNullOrEmpty(this.Request.QueryString["RoleName"]))
                 {
-                    sqlparams.Add(new MSQLParameter("@RoleName", MySqlDbTypeDefine.VarChar) { Value = this.Request.QueryString["RoleName"] });
+                    sqlparams.Add(new SqlParameter("@RoleName", SqlDbType.VarChar) { Value = this.Request.QueryString["RoleName"] });
                     this.ViewData["RoleName"] = this.Request.QueryString["RoleName"];
+                    sb.AppendFormat(" RoleName=@RoleName AND");
                 }
 
                 if (!string.IsNullOrEmpty(this.Request.QueryString["IsValid"]))
                 {
-                    sqlparams.Add(new MSQLParameter("@IsValid", MySqlDbTypeDefine.Int32) { Value = Convert.ToInt32(this.Request.QueryString["IsValid"]) });
+                    sqlparams.Add(new SqlParameter("@IsValid", SqlDbType.Int) { Value = Convert.ToInt32(this.Request.QueryString["IsValid"]) });
                     this.ViewData["IsValid"] = this.Request.QueryString["IsValid"];
+                    sb.AppendFormat(" IsValid=@IsValid AND");
                 }
             }
 
+            sb = sb.Remove(sb.Length - 3, 3);
+            where = sb.ToString();
             return sqlparams;
         }
 
@@ -111,40 +127,40 @@ namespace Help.ServiceRoute.Business
         /// </summary>
         /// <param name="json">json</param>
         /// <returns>结果</returns>
-        public JsonResult Save(string json)
-        {
-            VMResult ret = WebApiHelper.Post<VMResult>(this.dataServiceUrl + "/RoleInfo", json);
+        //public JsonResult Save(string json)
+        //{
+        //    VMResult ret = WebApiHelper.Post<VMResult>(this.dataServiceUrl + "/RoleInfo", json);
 
-            return this.Json(ret);
-        }
+        //    return this.Json(ret);
+        //}
 
-        public JsonResult Get(string keyid)
-        {
-            try
-            {
-                VMRoleInfo ret = WebApiHelper.Get<VMRoleInfo>(this.dataServiceUrl + "/RoleInfo", "keyid=" + keyid);
+        //public JsonResult Get(string keyid)
+        //{
+        //    try
+        //    {
+        //        VMRoleInfo ret = WebApiHelper.Get<VMRoleInfo>(this.dataServiceUrl + "/RoleInfo", "keyid=" + keyid);
 
-                return this.Json(new { IsSuccess = true, Result = ret });
-            }
-            catch (Exception ex)
-            {
-                return this.Json(new { IsSuccess = false, ErrorMsg = ex.Message.ToString() });
-            }
+        //        return this.Json(new { IsSuccess = true, Result = ret });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return this.Json(new { IsSuccess = false, ErrorMsg = ex.Message.ToString() });
+        //    }
 
-        }
+        //}
 
-        public JsonResult Get()
-        {
-            try
-            {
-                List<VMRoleInfo> ret = WebApiHelper.Get<List<VMRoleInfo>>(this.dataServiceUrl + "/RoleInfo", string.Empty);
+        //public JsonResult Get()
+        //{
+        //    try
+        //    {
+        //        List<VMRoleInfo> ret = WebApiHelper.Get<List<VMRoleInfo>>(this.dataServiceUrl + "/RoleInfo", string.Empty);
 
-                return this.Json(new { IsSuccess = true, Result = ret });
-            }
-            catch (Exception ex)
-            {
-                return this.Json(new { IsSuccess = false, ErrorMsg = ex.Message.ToString() });
-            }
-        }
+        //        return this.Json(new { IsSuccess = true, Result = ret });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return this.Json(new { IsSuccess = false, ErrorMsg = ex.Message.ToString() });
+        //    }
+        //}
     }
 }

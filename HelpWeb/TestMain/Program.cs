@@ -1,6 +1,5 @@
-﻿using Help.Common.APIModel.PagerService;
-using Help.Common.Util;
-using Help.Component.DataBase;
+﻿using Help.Common.Service;
+using Help.Common.Service.Service;
 using Help.DBAccessLayer.Business;
 using Newtonsoft.Json;
 using System;
@@ -19,7 +18,26 @@ namespace TestMain
     {
         static void Main(string[] args)
         {
-            TestPagerQuery();
+            TestMySQLEF();
+        }
+
+        private static void TestMySQLEF()
+        {
+            StartUp.AutoMapperStart();
+            Help.DBAccessLayer.Model.UsermanageDB.MRoleInfo model = new Help.DBAccessLayer.Model.UsermanageDB.MRoleInfo()
+            {
+                AddTime = DateTime.Now,
+                IsDelete = 0,
+                IsValid = 1,
+                KeyID = string.Empty,
+                ModifyTime = DateTime.Now,
+                RoleAlias = "用户",
+                RoleName = "普通用户",
+            };
+
+            Help.DBAccessLayer.Model.MOperateReturn ret = null;
+            var service = Help.Common.Factory.ServiceFactory.GetUserManagerDataDAO();
+            ret = service.AddRoleInfo(model);
         }
 
         private static void TestPagerQuery()

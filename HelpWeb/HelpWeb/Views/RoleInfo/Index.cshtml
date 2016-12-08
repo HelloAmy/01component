@@ -8,8 +8,6 @@
 }
 
 @section headSection{
-    <link href="http://resource.common.com/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="http://resource.common.com/layer-v2.2/layer/skin/layer.css" rel="stylesheet" />
 
     <style type="text/css">
         .page-num {
@@ -26,37 +24,23 @@
 }
 
 @section scripts{
-    <script src="http://resource.common.com/sea.js"></script>
     <script type="text/javascript">
         seajs.config({
-
-            // 解析顶级域名
-            base: "http://resource.common.com/",
-
             // 别名
             alias:
             {
-                "jsRender": "http://resource.common.com/jquery.jsRender.min.js",
-                "underscore": "http://resource.common.com/underscore.js",
-                "bootstrap": "http://resource.common.com/bootstrap-3.3.5-dist/js/bootstrap.min.js",
-                "layer": "http://resource.common.com/layer-v2.2/layer/layer.js",
-                "jqueryPlugin": "http://resource.common.com/jquery/jquery.plugin.js",
-                "Index": "http://resource.common.com/HelpWeb/RoleInfo/Index.js",
+                "Index": "/Scripts/RoleInfo/Index.js",
             },
-
-            // 预加载
-            preload: ["underscore", "bootstrap", "layer", "jsRender", "jqueryPlugin", "Index"],
         });
 
-        // 页面加载模块
-        seajs.use(["underscore", "bootstrap", "layer", "jsRender", "jqueryPlugin", "Index"]);
-
+        seajs.use("Index");
+ 
     </script>
 }
 
-<span style="margin-left: 2em;">管理>>角色管理</span>
+<a style="margin-left: 2em;color:#CDCDCD;">管理>>角色管理</a>
 
-<div id="query" style="margin-top: 30px; margin-left: 20px;">
+<div id="query" style="margin-top: 30px; margin-left: 20px;height:40px;">
     @using (@Html.BeginForm("Index", "RoleInfo", FormMethod.Get, new { @class = "form-horizontal" }))
     {
         <div class="form-group">

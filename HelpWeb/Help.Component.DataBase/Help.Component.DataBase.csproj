@@ -51,12 +51,6 @@
     <Compile Include="Model\MTableDefine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Help.Common.Util\Help.Common.Util.csproj">
-      <Project>{b135509f-33eb-466f-9fde-919dce331f06}</Project>
-      <Name>Help.Common.Util</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -54,10 +54,6 @@
       <Project>{83bcea29-b547-40b4-a6d1-68a99b5665d7}</Project>
       <Name>Help.Common.IDAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Help.Common.Util\Help.Common.Util.csproj">
-      <Project>{b135509f-33eb-466f-9fde-919dce331f06}</Project>
-      <Name>Help.Common.Util</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

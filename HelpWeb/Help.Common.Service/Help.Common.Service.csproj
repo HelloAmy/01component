@@ -30,6 +30,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Help.DBAccessLayer.Business">
+      <HintPath>..\DLL\DBAccessLayer\Help.DBAccessLayer.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="Help.DBAccessLayer.Model">
+      <HintPath>..\DLL\DBAccessLayer\Help.DBAccessLayer.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Help.EF.UsermanageDB">
+      <HintPath>..\DLL\UsermanageDBEF\Help.EF.UsermanageDB.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,19 +55,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="IContract\IPagerContract.cs" />
+    <Compile Include="IContract\IUserManagerDataContract.cs" />
+    <Compile Include="Mappers\RoleInfoMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BaseService.cs" />
     <Compile Include="Service\PagerService.cs" />
+    <Compile Include="Service\UserManagerDataService.cs" />
+    <Compile Include="StartUp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Help.Common.APIModel\Help.Common.APIModel.csproj">
-      <Project>{b18cbea3-0f33-417e-99f8-cba645ebd573}</Project>
-      <Name>Help.Common.APIModel</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="IContract\" />
     <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

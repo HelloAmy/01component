@@ -1,4 +1,6 @@
-﻿using Help.Common.APIModel.PagerService;
+﻿using Help.Common.Service.IContract;
+using Help.DBAccessLayer.Business;
+using Help.DBAccessLayer.Model.PagerQueryModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,17 +9,11 @@ using System.Threading.Tasks;
 
 namespace Help.Common.Service.Service
 {
-    public class PagerService
+    public class PagerService : IPagerContract
     {
-        public MPagerOutParam PagerQuery(MPagerInParam para)
+        public MPagerReturn PagerQuery(MPagerInParam para)
         {
-
-            MPagerOutParam ret = new MPagerOutParam()
-            {
-
-            };
-
-            return ret;
+            return new BPagerQuery().PagerQuery(para);
         }
     }
 }

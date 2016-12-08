@@ -33,6 +33,12 @@
     <Reference Include="Help.DataService.VModel">
       <HintPath>..\DLL\Help.DataService.VModel.dll</HintPath>
     </Reference>
+    <Reference Include="Help.DBAccessLayer.Business">
+      <HintPath>..\DLL\DBAccessLayer\Help.DBAccessLayer.Business.dll</HintPath>
+    </Reference>
+    <Reference Include="Help.DBAccessLayer.Model">
+      <HintPath>..\DLL\DBAccessLayer\Help.DBAccessLayer.Model.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\MySql.Data.dll</HintPath>
@@ -75,25 +81,13 @@
       <Project>{f6be98b9-84ab-4d70-9ed5-669af1ee4ed0}</Project>
       <Name>Help.Common.Factory</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Help.Common.Util\Help.Common.Util.csproj">
-      <Project>{b135509f-33eb-466f-9fde-919dce331f06}</Project>
-      <Name>Help.Common.Util</Name>
+    <ProjectReference Include="..\Help.Common.Service\Help.Common.Service.csproj">
+      <Project>{96f0dab3-8cc8-4fe0-95a5-25fb86407ebc}</Project>
+      <Name>Help.Common.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\Help.Common.ViewModel\Help.Common.ViewModel.csproj">
       <Project>{81d876f8-c007-4abe-a508-992b76da0c69}</Project>
       <Name>Help.Common.ViewModel</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Help.Component.DataBase\Help.Component.DataBase.csproj">
-      <Project>{11c0621e-77c7-443c-b588-bd33b578510e}</Project>
-      <Name>Help.Component.DataBase</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Help.DBAccessLayer.Business\Help.DBAccessLayer.Business.csproj">
-      <Project>{251d9501-872b-428d-b815-da756a43a087}</Project>
-      <Name>Help.DBAccessLayer.Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Help.DBAccessLayer.Model\Help.DBAccessLayer.Model.csproj">
-      <Project>{739a4717-4144-49d6-aebe-cf7e428e548b}</Project>
-      <Name>Help.DBAccessLayer.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
