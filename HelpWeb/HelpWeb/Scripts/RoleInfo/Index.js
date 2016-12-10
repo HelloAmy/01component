@@ -51,6 +51,43 @@
                     }
                 });
             });
+
+            // 启用禁用按钮
+            $('.validOperateButton').click(function () {
+
+                var obj = this;
+                var keyid = $(obj).attr('keyid');
+                var isvalid = $(obj).attr('isvalid');
+                var rolename = $(obj).attr('rolename');
+                var rolealias = $(obj).attr('rolealias');
+                var roleInfo = rolename + '-' + rolealias;
+                var confirmMsg = isvalid === '1' ? '确定要禁用角色:' + roleInfo : '确定要启用角色:' + roleInfo;
+
+                var setisvalid = isvalid === '1' ? 0 : 1;
+                //询问框
+                layer.confirm(confirmMsg + '?', {
+                    btn: ['确定', '取消'] //按钮
+                }, function () {
+
+                    mainModule.postasync('/RoleInfo/SetRoleInfoIsValid', { keyid: keyid, isvalid: setisvalid }, function (data) {
+                        layer.closeAll();
+                        if (data) {
+
+                            if (data.IsSuccess) {
+                                layer.alert('操作成功');
+                                $('#Query').click();
+                            } else {
+                                layer.alert(data.ErrorMsg);
+                            }
+                        }
+
+                    }, function (data) {
+                        console.log(data);
+                    });
+                }, function () {
+                    layer.closeAll();
+                });
+            });
         },
 
         // 保存绑定事件
@@ -99,6 +136,36 @@
             // 转model
             var obj = $.parseJSON(returnJson);
             return obj;
+        },
+
+        postasync: function (url, data, successfun, errorfun) {
+
+            if (successfun && errorfun) {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: "json",
+                    data: data,
+                    success: successfun,
+                    error: errorfun,
+                });
+            } else if (successfun) {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: "json",
+                    data: data,
+                    success: successfun,
+                });
+            } else if (errorfun) {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: "json",
+                    data: data,
+                    error: errorfun,
+                });
+            }
         },
 
         // 序列化模板

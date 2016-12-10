@@ -26,6 +26,10 @@ using MPagerInParamDAO = Help.DBAccessLayer.Model.PagerQueryModel.MPagerInParam;
 using MPagerReturnDAO = Help.DBAccessLayer.Model.PagerQueryModel.MPagerReturn;
 using System.Data.SqlClient;
 using System.Text;
+using Help.Common.Service.IContract;
+using Help.DBAccessLayer.Model.UsermanageDB;
+using Help.DBAccessLayer.Model;
+using System.Web.Http.Controllers;
 
 namespace Help.ServiceRoute.Business
 {
@@ -34,6 +38,13 @@ namespace Help.ServiceRoute.Business
     /// </summary>
     public class RoleInfoController : Controller
     {
+        private IUserManagerDataContract userManagerDataContract;
+
+        public RoleInfoController(IUserManagerDataContract service)
+        {
+            this.userManagerDataContract = service;
+        }
+
         /// <summary>
         /// dataServiceUrl
         /// </summary>
@@ -127,27 +138,49 @@ namespace Help.ServiceRoute.Business
         /// </summary>
         /// <param name="json">json</param>
         /// <returns>结果</returns>
-        //public JsonResult Save(string json)
-        //{
-        //    VMResult ret = WebApiHelper.Post<VMResult>(this.dataServiceUrl + "/RoleInfo", json);
+        public JsonResult Save(string json)
+        {
+            MOperateObj<MRoleInfo> obj = JsonConvert.DeserializeObject<MOperateObj<MRoleInfo>>(json);
+            MOperateReturn ret = new MOperateReturn();
+            if (obj.Type == MOperateType.Add)
+            {
+                ret = this.userManagerDataContract.AddRoleInfo(obj.Data);
+            }
+            else
+            {
+                ret = this.userManagerDataContract.UpdateRoleInfo(obj.Data);
+            }
 
-        //    return this.Json(ret);
-        //}
+            return this.Json(ret);
+        }
 
-        //public JsonResult Get(string keyid)
-        //{
-        //    try
-        //    {
-        //        VMRoleInfo ret = WebApiHelper.Get<VMRoleInfo>(this.dataServiceUrl + "/RoleInfo", "keyid=" + keyid);
+        public JsonResult Get(string keyid)
+        {
+            try
+            {
+                var ret = this.userManagerDataContract.GetRoleInfo(keyid);
+                return this.Json(new { IsSuccess = true, Result = ret });
+            }
+            catch (Exception ex)
+            {
+                return this.Json(new { IsSuccess = false, ErrorMsg = ex.Message.ToString() });
+            }
 
-        //        return this.Json(new { IsSuccess = true, Result = ret });
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return this.Json(new { IsSuccess = false, ErrorMsg = ex.Message.ToString() });
-        //    }
+        }
 
-        //}
+        public JsonResult SetRoleInfoIsValid(string keyid, int isvalid)
+        {
+            try
+            {
+                var ret = this.userManagerDataContract.SetRoleInfoIsValid(keyid, isvalid);
+
+                return this.Json(ret);
+            }
+            catch (Exception ex)
+            {
+                return this.Json(new { IsSuccess = false, ErrorMsg = ex.Message.ToString() });
+            }
+        }
 
         //public JsonResult Get()
         //{

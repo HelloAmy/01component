@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Help.Common.Service;
+using Help.Common.Service.IContract;
+using Help.Common.Service.Service;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,12 +21,12 @@ namespace HelpWeb
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+            //AreaRegistration.RegisterAllAreas();
 
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
-            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //WebApiConfig.Register(GlobalConfiguration.Configuration);
+            //FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }

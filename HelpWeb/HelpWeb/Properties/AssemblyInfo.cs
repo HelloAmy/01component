@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("HelpWeb")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyCompany("Butterfly")]
 [assembly: AssemblyProduct("HelpWeb")]
-[assembly: AssemblyCopyright("版权所有(C) Microsoft 2016")]
+[assembly: AssemblyCopyright("版权所有(C) Butterfly 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

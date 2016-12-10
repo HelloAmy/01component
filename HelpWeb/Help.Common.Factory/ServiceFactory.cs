@@ -17,7 +17,7 @@ namespace Help.Common.Factory
 
         public static IUserManagerDataContract GetUserManagerDataDAO()
         {
-            return new UserManagerDataService(ConnectionFactory.UsermanagedbRead);
+            return new UserManagerDataService();
         }
     }
 }
