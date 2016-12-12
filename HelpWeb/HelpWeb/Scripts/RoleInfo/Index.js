@@ -26,7 +26,7 @@
             });
 
             // 修改按钮
-            $('.updateButton').click(function () {
+            $('.updateButton').on('click', function () {
 
                 var obj = this;
                 var keyid = $(obj).attr('KeyID');
@@ -53,7 +53,7 @@
             });
 
             // 启用禁用按钮
-            $('.validOperateButton').click(function () {
+            $('.validOperateButton').on('click', function () {
 
                 var obj = this;
                 var keyid = $(obj).attr('keyid');

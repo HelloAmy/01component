@@ -19,6 +19,11 @@
             text-align: right;
             position: relative;
         }
+
+        .label {
+            height: 34px;
+            padding: 5px;
+        }
     </style>
 
 }
@@ -40,8 +45,8 @@
 
 <a style="margin-left: 2em;color:#CDCDCD;">管理>>角色管理</a>
 
-<div id="query" style="margin-top: 30px; margin-left: 20px;height:40px;">
-    @using (@Html.BeginForm("Index", "RoleInfo", FormMethod.Get, new { @class = "form-horizontal" }))
+<div id="query" style="margin-top: 30px; margin-left: 20px;">
+    @using (@Html.BeginForm("Index", "RoleInfo", FormMethod.Get))
     {
         <div class="form-group">
             <label for="RoleName" class="col-sm-1 control-label" style="text-align: right;">用户名</label>

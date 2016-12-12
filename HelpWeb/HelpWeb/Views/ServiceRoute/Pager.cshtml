@@ -22,14 +22,14 @@
 
             // 别名
             alias:
-            {
-                "jsRender": "http://resource.common.com/jquery.jsRender.min.js",
-                "underscore": "http://resource.common.com/underscore.js",
-                "bootstrap": "http://resource.common.com/bootstrap-3.3.5-dist/js/bootstrap.min.js",
-                "layer": "http://resource.common.com/layer-v2.2/layer/layer.js",
-                "jqueryPlugin": "http://resource.common.com/jquery/jquery.plugin.js",
-                "Pager": "http://resource.common.com/HelpWeb/ServiceRoute/Pager.js",
-            },
+			{
+			    "jsRender": "http://resource.common.com/jquery.jsRender.min.js",
+			    "underscore": "http://resource.common.com/underscore.js",
+			    "bootstrap": "http://resource.common.com/bootstrap-3.3.5-dist/js/bootstrap.min.js",
+			    "layer": "http://resource.common.com/layer-v2.2/layer/layer.js",
+			    "jqueryPlugin": "http://resource.common.com/jquery/jquery.plugin.js",
+			    "Pager": "http://resource.common.com/HelpWeb/ServiceRoute/Pager.js",
+			},
 
             // 预加载
             preload: ["underscore", "bootstrap", "layer", "jsRender", "jqueryPlugin", "Pager"],
@@ -104,7 +104,7 @@
 
                 <!-- 按钮触发模态框 -->
                 <button class="btn btn-primary" data-toggle="modal" type="button" id="addRefBtn"
-                    data-target="#updateServiceRouteModal">
+                        data-target="#updateServiceRouteModal">
                     添&nbsp;&nbsp;加
                 </button>
             </div>
@@ -135,55 +135,56 @@
             {
                 for (int i = 0; i < Model.Count; i++)
                 {
-                <tr>
-                    <td>
-                        <div style="width: 560px; word-break: break-all;">@Model[i].ContractName</div>
-                    </td>
-                    <td>@Model[i].CallSystem</td>
-                    <td>@Model[i].ServiceType</td>
-                    <td>@Model[i].DataCenter</td>
-                    <td>@Model[i].UniqueSign</td>
-                    <td>@Model[i].BindingType</td>
-                    <td width="20px;">@Model[i].ServiceIP</td>
-                    <td width="15px;">@Model[i].ServicePort</td>
-                    <td>@Model[i].SvcPath</td>
-                    <td>@if (Model[i].IsValid == 1)
-                        {
-                        <span>是</span>
-                        }
-                        else
-                        {
-                        <span>否</span>
-                        }
-                    </td>
-                    <td>
-                        <div style="width: 220px;">
-                            <button type="button" class="btn btn-primary btn-xs updateButton" RouteID="@Model[i].RouteID" data-toggle="modal"
-                    data-target="#updateServiceRouteModal">
-                                修改
-                            </button>
+                    <tr>
+                        <td>
+                            <div style="width: 560px; word-break: break-all;">@Model[i].ContractName</div>
+                        </td>
+                        <td>@Model[i].CallSystem</td>
+                        <td>@Model[i].ServiceType</td>
+                        <td>@Model[i].DataCenter</td>
+                        <td>@Model[i].UniqueSign</td>
+                        <td>@Model[i].BindingType</td>
+                        <td width="20px;">@Model[i].ServiceIP</td>
+                        <td width="15px;">@Model[i].ServicePort</td>
+                        <td>@Model[i].SvcPath</td>
+                        <td>
+                            @if (Model[i].IsValid == 1)
+                            {
+                                <span>是</span>
+                            }
+                            else
+                            {
+                                <span>否</span>
+                            }
+                        </td>
+                        <td>
+                            <div style="width: 220px;">
+                                <button type="button" class="btn btn-primary btn-xs updateButton" routeid="@Model[i].RouteID" data-toggle="modal"
+                                        data-target="#updateServiceRouteModal">
+                                    修改
+                                </button>
 
-                            <button type="button" class="btn btn-default btn-xs validOperateButton" RouteID="@Model[i].RouteID" IsValid="@Model[i].IsValid" ContractName="@Model[i].ContractName">
-                                @if (Model[i].IsValid == 1)
-                                {
-                                    <span>禁用</span>
-                                }
-                                else
-                                {
-                                    <span>启用</span>
-                                }
-                            </button>
+                                <button type="button" class="btn btn-default btn-xs validOperateButton" routeid="@Model[i].RouteID" isvalid="@Model[i].IsValid" contractname="@Model[i].ContractName">
+                                    @if (Model[i].IsValid == 1)
+                                    {
+                                        <span>禁用</span>
+                                    }
+                                    else
+                                    {
+                                        <span>启用</span>
+                                    }
+                                </button>
 
-                            <button type="button" class="btn btn-primary btn-xs copyAddRefButton" RouteID="@Model[i].RouteID" data-toggle="modal"
-                    data-target="#updateServiceRouteModal">
-                                复制添加
-                            </button>
-                            <button type="button" class="btn btn-default btn-xs deleteRefBtn" RouteID="@Model[i].RouteID" ContractName="@Model[i].ContractName">
-                                删除
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+                                <button type="button" class="btn btn-primary btn-xs copyAddRefButton" routeid="@Model[i].RouteID" data-toggle="modal"
+                                        data-target="#updateServiceRouteModal">
+                                    复制添加
+                                </button>
+                                <button type="button" class="btn btn-default btn-xs deleteRefBtn" routeid="@Model[i].RouteID" contractname="@Model[i].ContractName">
+                                    删除
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
                 }
             }
         </tbody>
@@ -211,7 +212,7 @@
 
 <!-- 修改路由框 -->
 <div class="modal fade" id="updateServiceRouteModal" tabindex="-1" role="dialog"
-    aria-labelledby="myModalLabel" aria-hidden="true">
+     aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div id="updatediv"></div>
         <!-- /.modal-content -->
@@ -223,10 +224,11 @@
     <div class="modal-content">
         <div class="modal-header">
             <button type="button" class="close"
-                data-dismiss="modal" aria-hidden="true">
+                    data-dismiss="modal" aria-hidden="true">
                 &times;
             </button>
-            <h4 class="modal-title" id="updateModalLabel">添加路由信息
+            <h4 class="modal-title" id="updateModalLabel">
+                添加路由信息
             </h4>
         </div>
         <div class="modal-body">
@@ -314,7 +316,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-default"
-                data-dismiss="modal">
+                    data-dismiss="modal">
                 关闭
             </button>
             <button type="button" class="btn btn-primary" id="updateServiceRouteBtn">

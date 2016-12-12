@@ -383,9 +383,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\ServiceRoute\Pager.cshtml" />
     <Content Include="Views\RoleInfo\Index.cshtml" />
-    <Content Include="Views\UserInfo\UserInfoManage.cshtml" />
     <Content Include="Views\DBCreater\SQLGenerator.cshtml" />
     <Content Include="Views\DBCreater\ShowDataBaseInfo.cshtml" />
+    <Content Include="Views\UserInfo\UserInfoManage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
