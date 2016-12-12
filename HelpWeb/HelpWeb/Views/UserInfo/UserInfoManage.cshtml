@@ -81,7 +81,7 @@
 
                 <!-- 按钮触发模态框 -->
                 <button class="btn btn-primary" data-toggle="modal" type="button" id="addbtn"
-                    data-target="#addModal">
+                        data-target="#addModal">
                     添&nbsp;&nbsp;加
                 </button>
             </div>
@@ -108,20 +108,20 @@
             {
                 for (int i = 0; i < Model.Count; i++)
                 {
-                <tr>
-                    <td>@Model[i].LoginName</td>
-                    <td>@Model[i].UserName</td>
-                    <td>@Model[i].Telephone</td>
-                    <td>@Model[i].Email</td>
-                    <td>@Model[i].ModifyTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
-                    <td>@Model[i].AddTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
-                    <td>
-                        <button type="button" class="btn btn-primary btn-xs updateButton" KeyID="@Model[i].KeyID" data-toggle="modal"
-                    data-target="#addModal">
-                            修改
-                        </button>
-                    </td>
-                </tr>
+                    <tr>
+                        <td>@Model[i].LoginName</td>
+                        <td>@Model[i].UserName</td>
+                        <td>@Model[i].Telephone</td>
+                        <td>@Model[i].Email</td>
+                        <td>@Model[i].ModifyTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <td>@Model[i].AddTime.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-xs updateButton" keyid="@Model[i].KeyID" data-toggle="modal"
+                                    data-target="#addModal">
+                                修改
+                            </button>
+                        </td>
+                    </tr>
                 }
             }
         </tbody>
@@ -153,14 +153,15 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close"
-                    data-dismiss="modal" aria-hidden="true">
+                        data-dismiss="modal" aria-hidden="true">
                     &times;
                 </button>
-                <h4 class="modal-title" id="addModalLabel">{{if KeyID === ''}}
-                        添加用户信息
-                        {{else}}
-                        修改用户信息
-                        {{/if}}
+                <h4 class="modal-title" id="addModalLabel">
+                    {{if KeyID === ''}}
+                    添加用户信息
+                    {{else}}
+                    修改用户信息
+                    {{/if}}
                 </h4>
             </div>
             <div class="modal-body">
@@ -213,7 +214,7 @@
                         <div class="col-sm-6">
                             {{if RoleInfoArray != null && RoleInfoArray.length > 0}}
                             {{for}}
-                                <input type="checkbox" name="RoleInfoArray" value="" /><span>名字</span>
+                            <input type="checkbox" name="RoleInfoArray" value="" /><span>名字</span>
                             {{/for}}
                             {{/if}}
                         </div>
@@ -223,7 +224,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default"
-                    data-dismiss="modal">
+                        data-dismiss="modal">
                     关闭
                 </button>
                 <button type="button" class="btn btn-primary" id="addModalBtn">
@@ -236,5 +237,5 @@
 </script>
 
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
-    aria-labelledby="myModalLabel" aria-hidden="true">
+     aria-labelledby="myModalLabel" aria-hidden="true">
 </div>
