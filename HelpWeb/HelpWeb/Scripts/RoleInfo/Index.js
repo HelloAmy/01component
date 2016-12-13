@@ -44,6 +44,7 @@
                         } else {
                             mainModule.renderHtml('addModalTemplate', 'addModal', data.Result);
                             mainModule.save('修改角色', 1);
+                            $('#addModal').modal();
                         }
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {

@@ -32,8 +32,9 @@
             $("#" + ctrlName).on("fileuploaded", function (event, data, previewId, index) {
                 $("#myModal").modal('hide');
                 var res = data.response;
-                if (res.IsSuccess && (res.Result && res.Result.IsSuccess)) {
-                    $('#generatorSqlText').val(res.Result.Result);
+                if (res.IsSuccess) {
+
+                    tableNameListMoudle.show(res);
                 } else {
                     layer.alert(res.ErrorMsg);
                 }
@@ -43,20 +44,99 @@
         return oFile;
     };
 
+    var tableNameListMoudle =  {
+        show:function(res){
+            mainMoudle.renderHtml('tableNameListTemplate', 'tableNameList', res);
+            tableNameListMoudle.bindEvent();
+        },
+        bindEvent:function(){
+            $('#generateSqlBtn').click(function(){
+                var model = {};
+                model.fileName=$('input[name="fileName"').val();
+                var tempTableNames = [];
+
+                $('.col-sm-3 input:checkbox:checked').each(function(i){
+
+                    var obj = this;
+                    if ($(obj).val() !== ''){
+                        tempTableNames.push($(obj).val());
+                    }
+                });
+
+                model.tableNames = tempTableNames.toString();
+
+                mainMoudle.postasync('/DBCreater/GenerateSQL', model, function(data){
+
+                    if (data && data.IsSuccess){
+                        $('#generatorSqlText').val(data.Result.Result)
+                    } else{
+                        layer.alert(data.ErrorMsg);
+                    }
+                },function(data){
+
+                    layer.alert('错误详细:'+JSON.stringify(data));
+                });
+            });
+        },
+    };
+
     var mainMoudle = {
         main: function () {
             mainMoudle.init();
         },
         init: function () {
+            var oFileInput = new FileInput();
+             
             $("#btn_import").click(function () {
-              
-                var initstr = '<a href="/DBCreater/DownloadFile?fileName=UserManageDB.xls&contentType=xls" class="form-control" style="border:none;">下载导入模板</a><input type="file" name="file" id="uploadFile" multiple class="file-loading" />'
-                $('#uploadFile-modal-body').html(initstr);   
-                var oFileInput = new FileInput();
-                oFileInput.Init("uploadFile", "/DBCreater/ImportExcelFile");
 
+                // var initstr = '<a href="/DBCreater/DownloadFile?fileName=UserManageDB.xls&contentType=xls" class="form-control" style="border:none;">下载导入模板</a><input type="file" name="file" id="uploadFile" multiple class="file-loading" />'
+                // $('#uploadFile-modal-body').html(initstr);
+
+                mainMoudle.renderHtml('importTemplate','myModal');
+                oFileInput.Init("uploadFile", "/DBCreater/ImportExcelFile");
                 $("#myModal").modal();
             });
+
+        },
+        // 序列化模板
+        renderHtml: function (tempId, renderId, data) {
+            if (data)
+            {
+                var tempHtml = $('#' + tempId + '').render(data);
+                $('#' + renderId + "").html(tempHtml);
+            } else{
+                var html = $('#' + tempId + '').html();
+                 $('#' + renderId + "").html(html);
+            }
+        },
+        postasync: function (url, data, successfun, errorfun) {
+
+            if (successfun && errorfun) {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: "json",
+                    data: data,
+                    success: successfun,
+                    error: errorfun,
+                });
+            } else if (successfun) {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: "json",
+                    data: data,
+                    success: successfun,
+                });
+            } else if (errorfun) {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    dataType: "json",
+                    data: data,
+                    error: errorfun,
+                });
+            }
         }
     };
 

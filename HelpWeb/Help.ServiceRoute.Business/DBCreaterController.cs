@@ -1,4 +1,5 @@
 ﻿using Help.DBAccessLayer.Business;
+using Help.DBAccessLayer.Model.SqlGenerator;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -47,8 +48,34 @@ namespace Help.ServiceRoute.Business
                 BGetTableDefineFromExcel bll = new BGetTableDefineFromExcel();
                 var result = bll.GetTableDefineListFromExcel(fileName);
 
+                //BGeneratorSQL generatorSql = new BGeneratorSQL();
+                //var sqlResult = generatorSql.GeneratorSQL(result);
+                return this.Json(new { IsSuccess = true, Result = result, FileName = fileName });
+            }
+            catch (Exception ex)
+            {
+                return this.Json(new { IsSuccess = false, ErrorMsg = ex.Message.ToString() });
+            }
+        }
+
+        public JsonResult GenerateSQL(string fileName, List<string> tableNames)
+        {
+
+            try
+            {
+                BGetTableDefineFromExcel bll = new BGetTableDefineFromExcel();
+                var result = bll.GetTableDefineListFromExcel(fileName);
+
+                if (result != null && result.TableList != null)
+                {
+                    result.TableList = (from p in result.TableList
+                                        where tableNames.Contains(p.TableName)
+                                        select p).ToList<MTableDefine>();
+                }
+
                 BGeneratorSQL generatorSql = new BGeneratorSQL();
                 var sqlResult = generatorSql.GeneratorSQL(result);
+
                 return this.Json(new { IsSuccess = true, Result = sqlResult });
             }
             catch (Exception ex)

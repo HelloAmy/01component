@@ -74,7 +74,9 @@
         });
 
         // 页面加载模块
-        seajs.use(["jquery", "underscore", "bootstrap", "layer", "jsRender", "jqueryPlugin", "moment"]);
+        seajs.use(["jquery", "underscore", "bootstrap", "layer", "jsRender", "jqueryPlugin", "moment"], function () {
+            console.log('layout页面js加载完成');
+        });
 
     </script>
 

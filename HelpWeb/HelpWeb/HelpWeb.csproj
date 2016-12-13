@@ -210,6 +210,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-fileinput\img\loading-sm.gif" />
+    <Content Include="Content\bootstrap-fileinput\img\loading.gif" />
     <Content Include="Content\bootstrap3.3.5\css\bootstrap-theme.css" />
     <Content Include="Content\bootstrap3.3.5\css\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap3.3.5\css\bootstrap.css" />

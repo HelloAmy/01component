@@ -132,12 +132,11 @@
                         }
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary btn-xs updateButton" KeyID="@Model[i].KeyID" data-toggle="modal"
-                    data-target="#addModal">
+                        <button type="button" class="btn btn-primary btn-xs updateButton" KeyID="@Model[i].KeyID">
                             修改
                         </button>
 
-                        <button type="button" class="btn btn-default btn-xs validOperateButton" keyid="@Model[i].KeyID" isvalid="@Model[i].IsValid" rolename="@Model[i].RoleName" rolealias="@Model[i].RoleAlias" data-toggle="modal" data-target="#DialogModal">
+                        <button type="button" class="btn btn-default btn-xs validOperateButton" keyid="@Model[i].KeyID" isvalid="@Model[i].IsValid" rolename="@Model[i].RoleName" rolealias="@Model[i].RoleAlias" data-toggle="modal">
                             @if (Model[i].IsValid == 1)
                             {
                                 <span>禁用</span>

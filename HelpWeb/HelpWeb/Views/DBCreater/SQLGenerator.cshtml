@@ -4,8 +4,8 @@
 }
 
 @section headSection{
+    <link href="~/Content/bootstrap-fileinput/css/fileinput.css" rel="stylesheet" />
 
-    @Styles.Render("~/Content/bootstrap-fileinput/fileinput.css")
     <style type="text/css">
         #generatorSqlText {
             width: 800px;
@@ -30,11 +30,15 @@
 @section scripts{
     <!-- @Scripts.Render("~/Content/bootstrap-fileinput/js/fileinput.js") -->
     <script>
-        seajs.config({
-            preload: ["/Content/bootstrap-fileinput/js/fileinput.js", "/Content/bootstrap-fileinput/js/locales/zh.js", "/Scripts/DBCreater/SQLGenerator.js"]
+        seajs.use("/Content/bootstrap-fileinput/js/fileinput.js", function () {
+
+            seajs.use("/Content/bootstrap-fileinput/js/locales/zh.js", function () {
+
+                seajs.use("/Scripts/DBCreater/SQLGenerator.js");
+            });
         });
 
-        seajs.use(["/Content/bootstrap-fileinput/js/fileinput.js", "/Content/bootstrap-fileinput/js/locales/zh.js", "/Scripts/DBCreater/SQLGenerator.js"]);
+        //seajs.use(["/Content/bootstrap-fileinput/js/fileinput.js", "/Content/bootstrap-fileinput/js/locales/zh.js", "/Scripts/DBCreater/SQLGenerator.js"]);
 
     </script>
 }
@@ -52,22 +56,47 @@
     </div>
     <form>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="z-index:9999;">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">请选择Excel文件</h4>
-                    </div>
-                    <div class="modal-body" id="uploadFile-modal-body">
-                        <a href="/DBCreater/DownloadFile?fileName=UserManageDB.xls&contentType=xls" class="form-control" style="border:none;">下载导入模板</a>
-                        <input type="file" name="file" id="uploadFile" multiple class="file-loading" />
-                    </div>
-                </div>
-            </div>
         </div>
     </form>
 
+</div>
+
+<div id="tableNameList">
 
 </div>
 <textarea id="generatorSqlText"></textarea>
+
+<script type="text/x-jsrender" id="tableNameListTemplate">
+    <ul>
+        <li>
+            <input type="checkbox" checked /><label>全部</label>
+            <button class="btn btn-primary" type="button" id="generateSqlBtn">生成SQL</button>
+        </li>
+
+        {{for Result.TableList}}
+        <li class="col-sm-3">
+            <input type="checkbox" name="{{:TableName}}" value="{{:TableName}}" checked />
+            <label>{{:TableName}}</label>
+        </li>
+        {{/for}}
+    </ul>
+
+    <input type="hidden" name="fileName" value="{{:FileName}}" />
+    <br />
+</script>
+
+<script type="text/x-jsrender" id="importTemplate">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">请选择Excel文件</h4>
+            </div>
+            <div class="modal-body" id="uploadFile-modal-body">
+                <a href="/DBCreater/DownloadFile?fileName=UserManageDB.xls&contentType=xls" class="form-control" style="border:none;">下载导入模板</a>
+                <input type="file" name="file" id="uploadFile" multiple class="file-loading" />
+            </div>
+        </div>
+    </div>
+</script>
 
