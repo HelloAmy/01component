@@ -68,7 +68,7 @@
   <ItemGroup>
     <Compile Include="DBCreaterController.cs" />
     <Compile Include="RoleInfoController.cs" />
-    <Compile Include="ServiceRouteController.cs" />
+    <Compile Include="SamplesController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInfoController.cs" />
     <Compile Include="WebApi\TestController.cs" />

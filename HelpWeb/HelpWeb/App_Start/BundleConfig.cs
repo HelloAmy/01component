@@ -59,6 +59,11 @@ namespace HelpWeb
                 .Include("~/Scripts/common/moment.js")
                 .Include("~/Scripts/common/underscore.js")
                 );
+
+            var appResourceLessBundle = new Bundle("~/Content/app.less").
+                IncludeDirectory("~/Content/less", "*.less", true);
+
+            bundles.Add(appResourceLessBundle);
         }
     }
 }

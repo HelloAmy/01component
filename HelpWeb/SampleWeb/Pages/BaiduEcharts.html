@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>百度Echart使用</title>
+    <link href="../Content/bootstrap3.3.5/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Content/bootstrap3.3.5/css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="../Scripts/Common/jquery.min.js"></script>
+    <script src="../Scripts/Common/sea.js"></script>
+
+    <script type="text/javascript">
+        seajs.config({
+
+            // 解析顶级域名
+            base: "/",
+
+            // 别名
+            alias:
+            {
+                "jquery": "../Scripts/Common/jquery.min.js",
+                "jsRender": "../Scripts/Common/jquery.jsRender.min.js",
+                "BaiduEcharts": "../Scripts/BaiduEcharts.js",
+                "underscore": "../Scripts/Common/underscore.js",
+                "bootstrap": "../Content/bootstrap3.3.5/js/bootstrap.js",
+                "layer": "../Content/layer/layer.js",
+                "jqueryPlugin": "../Scripts/Common/jquery.plugin.js",
+                "moment": "../Scripts/Common/moment.js"
+            },
+
+            // 预加载
+            preload: ["jquery", "BaiduEcharts", "underscore", "bootstrap", "layer", "jsRender", "jqueryPlugin", "moment"],
+        });
+
+        // 页面加载模块
+        seajs.use(["jquery", "BaiduEcharts", "underscore", "bootstrap", "layer", "jsRender", "jqueryPlugin", "moment"], function () {
+            console.log('layout页面js加载完成');
+        });
+
+    </script>
+</head>
+<body>
+
+    <div id="pie"></div>
+</body>
+</html>
